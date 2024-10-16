@@ -14,7 +14,7 @@
   class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0"
 >
   {#if canLogin}
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+    <div class="fixed top-0 right-0 px-6 py-4 block sm:block">
       {#if $page.props.auth.user}
         <Link href="/dashboard" class="text-sm text-gray-700 underline dark:text-white">
           Dashboard
