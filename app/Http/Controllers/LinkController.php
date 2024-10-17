@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Link;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Inertia\Inertia;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 class LinkController extends Controller
 {
