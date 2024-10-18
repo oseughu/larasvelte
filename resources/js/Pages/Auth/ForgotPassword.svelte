@@ -1,20 +1,18 @@
 <script>
-  import BreezeButton from '@/Components/Button.svelte'
-  import BreezeInput from '@/Components/Input.svelte'
-  import BreezeLabel from '@/Components/Label.svelte'
-  import BreezeValidationErrors from '@/Components/ValidationErrors.svelte'
-  import BreezeGuestLayout from '@/Layouts/Guest.svelte'
+  import InputError from '@/Components/InputError.svelte'
+  import InputLabel from '@/Components/InputLabel.svelte'
+  import PrimaryButton from '@/Components/PrimaryButton.svelte'
+  import TextInput from '@/Components/TextInput.svelte'
+  import GuestLayout from '@/Layouts/GuestLayout.svelte'
   import { useForm } from '@inertiajs/svelte'
-  let err = {}
-  export let errors = {}
+
   export let status
-  $: {
-    err = errors
-  }
-  const form = useForm({
+
+  let form = useForm({
     email: ''
   })
-  const onSubmit = () => {
+
+  const submit = () => {
     $form.post(route('password.email'))
   }
 </script>
@@ -23,40 +21,40 @@
   <title>Forgot Password</title>
 </svelte:head>
 
-<BreezeGuestLayout>
-  <div class="mb-4 text-sm text-gray-600">
+<GuestLayout>
+  <div class="mb-4 text-sm text-gray-600 dark:text-gray-400">
     Forgot your password? No problem. Just let us know your email address and we will email you a
     password reset link that will allow you to choose a new one.
   </div>
 
   {#if status}
-    <div class="mb-4 font-medium text-sm text-green-600">
+    <div class="mb-4 text-sm font-medium text-green-600 dark:text-green-400">
       {status}
     </div>
   {/if}
 
-  <BreezeValidationErrors class="mb-4" errors={err} />
-
-  <form on:submit|preventDefault={onSubmit}>
+  <form on:submit|preventDefault={submit}>
     <div>
-      <BreezeLabel for="email" value="Email" />
-      <BreezeInput
+      <InputLabel for="email" value="Email" />
+
+      <TextInput
         id="email"
         type="email"
         class="mt-1 block w-full"
-        value={form.email}
+        bind:value={$form.email}
         required
         autofocus
         autocomplete="username"
-        on:input={(evt) => ($form.email = evt.detail)}
       />
+
+      <InputError class="mt-2" message={$form.errors.email} />
     </div>
 
-    <div class="flex items-center justify-end mt-4">
+    <div class="mt-4 flex items-center justify-end">
       <!-- svelte-ignore illegal-attribute-character -->
-      <BreezeButton sclass:opacity-25={form.processing} disabled={form.processing}>
+      <PrimaryButton xclass:opacity-25={$form.processing} disabled={$form.processing}>
         Email Password Reset Link
-      </BreezeButton>
+      </PrimaryButton>
     </div>
   </form>
-</BreezeGuestLayout>
+</GuestLayout>

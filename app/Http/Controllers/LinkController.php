@@ -18,8 +18,7 @@ class LinkController extends Controller
     public function index()
     {
         return Inertia::render('Links/Index', [
-            // return links that the user created
-            'links' => Link::where('user_id', auth()->id())->get(),
+            'links' => Link::where('user_id', \Auth::id())->get(),
         ]);
     }
 
@@ -43,7 +42,7 @@ class LinkController extends Controller
 
     {
         // Put the user id in the request
-        $request->merge(['user_id' => auth()->id()]);
+        $request->merge(['user_id' => \Auth::id()]);
 
         $validated = $request->validate([
             'url' => 'required',
