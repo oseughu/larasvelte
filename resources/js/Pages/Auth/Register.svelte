@@ -1,11 +1,10 @@
-<script>
-  import BreezeButton from '@/Components/Button.svelte'
-  import BreezeInput from '@/Components/Input.svelte'
-  import BreezeLabel from '@/Components/Label.svelte'
-  import BreezeValidationErrors from '@/Components/ValidationErrors.svelte'
-  import BreezeGuestLayout from '@/Layouts/Guest.svelte'
-  import { inertia, useForm } from '@inertiajs/svelte'
-  export let errors = {}
+<script setup>
+  import InputError from '@/Components/InputError.svelte'
+  import InputLabel from '@/Components/InputLabel.svelte'
+  import PrimaryButton from '@/Components/PrimaryButton.svelte'
+  import TextInput from '@/Components/TextInput.svelte'
+  import GuestLayout from '@/Layouts/GuestLayout.svelte'
+  import { Link, useForm } from '@inertiajs/svelte'
 
   let form = useForm({
     name: null,
@@ -15,14 +14,8 @@
     terms: false
   })
 
-  let err = {}
-
-  $: {
-    err = errors
-  }
-
   const submit = () => {
-    $form.post('/register', {
+    $form.post(route('register'), {
       onSuccess: () => $form.reset('password', 'password_confirmation')
     })
   }
@@ -32,72 +25,78 @@
   <title>Register</title>
 </svelte:head>
 
-<BreezeGuestLayout>
-  <BreezeValidationErrors class="mb-4" errors={err} />
-
+<GuestLayout>
   <form on:submit|preventDefault={submit}>
     <div>
-      <BreezeLabel for="name" value="Name" />
-      <BreezeInput
+      <InputLabel for="name" value="Name" />
+      <TextInput
         id="name"
         type="text"
         class="mt-1 block w-full"
-        value={form.name}
+        value={$form.name}
         required
         autofocus
         autocomplete="name"
         on:input={(evt) => ($form.name = evt.detail)}
       />
+      <InputError class="mt-2" message={$form.errors.name} />
     </div>
 
     <div class="mt-4">
-      <BreezeLabel for="email" value="Email" />
-      <BreezeInput
+      <InputLabel for="email" value="Email" />
+      <TextInput
         id="email"
         type="email"
         class="mt-1 block w-full"
-        value={form.email}
+        value={$form.email}
         required
         autocomplete="username"
         on:input={(evt) => ($form.email = evt.detail)}
       />
+      <InputError class="mt-2" message={$form.errors.email} />
     </div>
 
     <div class="mt-4">
-      <BreezeLabel for="password" value="Password" />
-      <BreezeInput
+      <InputLabel for="password" value="Password" />
+      <TextInput
         id="password"
         type="password"
         class="mt-1 block w-full"
-        value={form.password}
+        value={$form.password}
         required
         autocomplete="new-password"
         on:input={(evt) => ($form.password = evt.detail)}
       />
+      <InputError class="mt-2" message={$form.errors.password} />
     </div>
 
     <div class="mt-4">
-      <BreezeLabel for="password_confirmation" value="Confirm Password" />
-      <BreezeInput
+      <InputLabel for="password_confirmation" value="Confirm Password" />
+      <TextInput
         id="password_confirmation"
         type="password"
         class="mt-1 block w-full"
-        value={form.password_confirmation}
+        value={$form.password_confirmation}
         required
         autocomplete="new-password"
         on:input={(evt) => ($form.password_confirmation = evt.detail)}
       />
+
+      <InputError class="mt-2" message={$form.errors.password_confirmation} />
     </div>
 
-    <div class="flex items-center justify-end mt-4">
-      <a href="/login" use:inertia class="underline text-sm text-gray-600 hover:text-gray-900">
+    <div class="mt-4 flex items-center justify-end">
+      <Link
+        href="/login"
+        class="rounded-md text-sm text-gray-600 underline hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:text-gray-400 dark:hover:text-gray-100 dark:focus:ring-offset-gray-800"
+      >
         Already registered?
-      </a>
+      </Link>
 
       <!-- svelte-ignore illegal-attribute-character -->
-      <BreezeButton class="ml-4" xclass:opacity-25={form.processing} disabled={form.processing}>
+      <PrimaryButton class="ms-4" xclass:opacity-25={$form.processing} disabled={$form.processing}>
         Register
-      </BreezeButton>
+      </PrimaryButton>
     </div>
   </form>
-</BreezeGuestLayout>
+</GuestLayout>

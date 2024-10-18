@@ -23,3 +23,7 @@
     ><slot /></button
   >
 {/if}
+
+<!-- <Link {href} class={classes}>
+  <slot />
+</Link> -->
