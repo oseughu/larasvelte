@@ -17,7 +17,7 @@
   })
 
   async function updatePassword() {
-    $form.put(route('password.update'), {
+    $form.post('/reset-password', {
       preserveScroll: true,
       onSuccess: () => $form.reset(),
       onError: async () => {
@@ -51,10 +51,9 @@
 
       <TextInput
         id="current_password"
-        bind:this={currentPasswordInput}
         bind:value={$form.current_password}
         type="password"
-        class="mt-1 block w-full"
+        class="mt-1 block w-full lg:w-1/2"
         autocomplete="current-password"
       />
 
@@ -66,10 +65,9 @@
 
       <TextInput
         id="password"
-        bind:this={passwordInput}
         bind:value={$form.password}
         type="password"
-        class="mt-1 block w-full"
+        class="mt-1 block w-full lg:w-1/2"
         autocomplete="new-password"
       />
 
@@ -83,7 +81,7 @@
         id="password_confirmation"
         bind:value={$form.password_confirmation}
         type="password"
-        class="mt-1 block w-full"
+        class="mt-1 block w-full lg:w-1/2"
         autocomplete="new-password"
       />
 

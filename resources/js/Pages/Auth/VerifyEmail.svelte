@@ -8,7 +8,7 @@
   const form = useForm()
 
   const onSubmit = () => {
-    $form.post(route('verification.send'))
+    $form.post('/email/verification-notification')
   }
 
   $: {

@@ -16,8 +16,8 @@
     password_confirmation: null
   })
 
-  const onSubmit = () => {
-    $form.post(route('reset-password'), {
+  const submit = () => {
+    $form.post('/reset-password', {
       onSuccess: () => $form.reset('password', 'password_confirmation')
     })
   }
@@ -28,7 +28,7 @@
 </svelte:head>
 
 <GuestLayout>
-  <form on:submit|preventDefault={onSubmit}>
+  <form on:submit|preventDefault={submit}>
     <div>
       <InputLabel for="email" value="Email" />
       <TextInput

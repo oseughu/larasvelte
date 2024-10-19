@@ -22,7 +22,7 @@
 
 <input
   {...$$restProps}
-  class="w-1/2 rounded-md shadow-sm focus:border-indigo-500 focus:ring-indigo-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-indigo-600 dark:focus:ring-indigo-600 p-2 h-10 {className}"
+  class="rounded-md shadow-sm focus:border-indigo-500 dark:border-gray-700 focus:outline-none dark:bg-gray-900 dark:text-gray-300 dark:focus:border-indigo-600 dark:focus:ring-indigo-600 p-2 h-10 {className}"
   bind:value
   on:input={onInput}
   bind:this={inputElement}

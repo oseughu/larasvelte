@@ -1,8 +1,8 @@
 <script>
+  import UpdatePasswordForm from '@/Components/UpdatePasswordForm.svelte'
+  import UpdateProfileInformationForm from '@/Components/UpdateProfileInformationForm.svelte'
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
-  import DeleteUserForm from './Partials/DeleteUserForm.svelte'
-  import UpdatePasswordForm from './Partials/UpdatePasswordForm.svelte'
-  import UpdateProfileInformationForm from './Partials/UpdateProfileInformationForm.svelte'
+  import DeleteUserForm from '@/Components/DeleteUserForm.svelte'
 
   export let mustVerifyEmail
   export let status

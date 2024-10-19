@@ -37,15 +37,18 @@ Route::get('/about', function () {
 })->middleware(['auth', 'verified'])->name('about');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.edit');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/links', [LinkController::class, 'index'])
-    ->middleware(['auth', 'verified'])
-    ->name('links.index');
-Route::post('/links', [LinkController::class, 'store'])
-    ->name('links.store');
-Route::delete('/links/{link}', [LinkController::class, 'destroy'])
-    ->name('links.destroy');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/links', [LinkController::class, 'index'])
+        ->name('links.index');
+
+    Route::post('/links', [LinkController::class, 'store'])
+        ->name('links.store');
+
+    Route::delete('/links/{link}', [LinkController::class, 'destroy'])
+        ->name('links.destroy');
+});

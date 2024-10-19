@@ -7,7 +7,7 @@
   import { Link, page } from '@inertiajs/svelte'
 
   let showingNavigationDropdown = false
-  export let user = $page.props.auth.user
+  $: user = $page.props.auth.user
 </script>
 
 <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -29,7 +29,7 @@
           <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
             <NavLink href="/dashboard" active={$page.component === 'Dashboard'}>Dashboard</NavLink>
             <NavLink href="/about" active={$page.component === 'About'}>About</NavLink>
-            <NavLink href="/links" active={$page.component === 'Links/Index'}>Links</NavLink>
+            <NavLink href="/links" active={$page.component === 'Links'}>Links</NavLink>
           </div>
         </div>
 
@@ -64,7 +64,7 @@
               <div slot="content">
                 <DropdownLink href="/profile">Profile</DropdownLink>
                 <DropdownLink href="/logout" method="post" as="button" type="button"
-                  >Log Out</DropdownLink
+                  >Logout</DropdownLink
                 >
               </div>
             </Dropdown>
@@ -116,7 +116,7 @@
         <ResponsiveNavLink href="/about" active={$page.component === 'About'}>
           About
         </ResponsiveNavLink>
-        <ResponsiveNavLink href="/links" active={$page.component === 'Links/Index'}>
+        <ResponsiveNavLink href="/links" active={$page.component === 'Links'}>
           Links
         </ResponsiveNavLink>
       </div>
@@ -133,8 +133,9 @@
         </div>
 
         <div class="mt-3 space-y-1">
-          <ResponsiveNavLink href="/profile">Profile</ResponsiveNavLink>
-          <ResponsiveNavLink href="/logout" method="post" as="button">Log Out</ResponsiveNavLink>
+          <ResponsiveNavLink href="/logout" method="post" as="button" type="button"
+            >Logout</ResponsiveNavLink
+          >
         </div>
       </div>
     </div>

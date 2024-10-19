@@ -5,7 +5,6 @@
   export { forName as for }
 </script>
 
-<!-- svelte-ignore a11y-label-has-associated-control -->
 <label
   {...$$restProps}
   class="block text-sm font-medium text-gray-700 dark:text-gray-300"

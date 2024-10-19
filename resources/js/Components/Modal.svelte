@@ -1,7 +1,7 @@
 <script>
-  import { createEventDispatcher, onDestroy, onMount, tick } from 'svelte'
+  import { createEventDispatcher, onDestroy, onMount } from 'svelte'
   import { quintIn, quintOut } from 'svelte/easing'
-  import { fade, fly } from 'svelte/transition'
+  import { fade } from 'svelte/transition'
 
   export let show = false
   export let maxWidth = '2xl'
@@ -9,7 +9,6 @@
 
   const dispatch = createEventDispatcher()
 
-  // Reactive statement to watch 'show' prop
   $: if (show) {
     document.body.style.overflow = 'hidden'
   } else {

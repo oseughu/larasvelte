@@ -17,7 +17,7 @@
   })
 
   function submit() {
-    $form.post(route('login'), {
+    $form.post('/login', {
       onSuccess: () => $form.reset()
     })
   }
@@ -46,7 +46,6 @@
         required
         autofocus
         autocomplete="username"
-        on:input={(evt) => ($form.email = evt.detail)}
       />
 
       <InputError class="mt-2" message={$form.errors.email} />

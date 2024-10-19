@@ -23,7 +23,7 @@
   }
 
   function deleteUser() {
-    $form.delete(route('profile.destroy'), {
+    $form.delete('/profile', {
       preserveScroll: true,
       onSuccess: () => closeModal(),
       onError: () => passwordInput.focus(),

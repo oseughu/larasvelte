@@ -41,7 +41,7 @@
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div on:click={() => (open = !open)}>
-    <slot name="trigger"></slot>
+    <slot name="trigger" />
   </div>
 
   <!-- Full Screen Dropdown Overlay -->
@@ -64,7 +64,7 @@
       }}
     >
       <div class={`rounded-md ring-1 ring-black ring-opacity-5 ${contentClasses}`}>
-        <slot name="content"></slot>
+        <slot name="content" />
       </div>
     </div>
   {/if}

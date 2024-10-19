@@ -16,9 +16,7 @@
     email: user.email
   })
 
-  function submit() {
-    $form.patch(route('profile.update'))
-  }
+  const submit = () => $form.patch('/profile')
 </script>
 
 <section>
@@ -37,7 +35,7 @@
       <TextInput
         id="name"
         type="text"
-        class="mt-1 block w-full"
+        class="mt-1 block w-full lg:w-1/2"
         bind:value={$form.name}
         required
         autofocus
@@ -53,7 +51,7 @@
       <TextInput
         id="email"
         type="email"
-        class="mt-1 block w-full"
+        class="mt-1 block w-full lg:w-1/2"
         bind:value={$form.email}
         required
         autocomplete="username"

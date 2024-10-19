@@ -15,7 +15,7 @@
   })
 
   const submit = () => {
-    $form.post(route('register'), {
+    $form.post('/register', {
       onSuccess: () => $form.reset('password', 'password_confirmation')
     })
   }
@@ -33,7 +33,7 @@
         id="name"
         type="text"
         class="mt-1 block w-full"
-        value={$form.name}
+        bind:value={$form.name}
         required
         autofocus
         autocomplete="name"
@@ -48,7 +48,7 @@
         id="email"
         type="email"
         class="mt-1 block w-full"
-        value={$form.email}
+        bind:value={$form.email}
         required
         autocomplete="username"
         on:input={(evt) => ($form.email = evt.detail)}
@@ -62,10 +62,9 @@
         id="password"
         type="password"
         class="mt-1 block w-full"
-        value={$form.password}
+        bind:value={$form.password}
         required
         autocomplete="new-password"
-        on:input={(evt) => ($form.password = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.password} />
     </div>
@@ -76,10 +75,9 @@
         id="password_confirmation"
         type="password"
         class="mt-1 block w-full"
-        value={$form.password_confirmation}
+        bind:value={$form.password_confirmation}
         required
         autocomplete="new-password"
-        on:input={(evt) => ($form.password_confirmation = evt.detail)}
       />
 
       <InputError class="mt-2" message={$form.errors.password_confirmation} />

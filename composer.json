@@ -12,8 +12,7 @@
         "laravel/telescope": "^5.2",
         "laravel/tinker": "^2.9",
         "resend/resend-php": "^0.13.0",
-        "silviolleite/laravelpwa": "^2.0",
-        "tightenco/ziggy": "^2.3"
+        "silviolleite/laravelpwa": "^2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

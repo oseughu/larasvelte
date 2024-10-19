@@ -13,18 +13,20 @@
   })
 
   function submit() {
-    $form.post(route('links.store'), {
+    $form.post('/links', {
       onSuccess: () => $form.reset('title', 'url')
     })
   }
 </script>
 
 <svelte:head>
-  <title>Links List</title>
+  <title>Links</title>
 </svelte:head>
 
 <AuthenticatedLayout>
-  <h2 class="text-xl font-semibold leading-tight text-gray-800" slot="header">Links</h2>
+  <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200" slot="header">
+    Links
+  </h2>
 
   <div class="py-12">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -37,7 +39,7 @@
               <li>
                 <a href={link.url} target="_blank">{link.title}</a>
                 <button
-                  class="inline-flex items-center px-3 py-2 mt-4 text-sm font-medium leading-4 text-white dark:text-gray-100 bg-red-400 border border-transparent rounded-md shadow-sm hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700"
+                  class="inline-flex items-center px-3 py-2 mt-4 ml-3 text-sm font-medium leading-4 text-white dark:text-gray-100 bg-red-400 border border-transparent rounded-md shadow-sm hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700"
                   use:inertia={{
                     href: `/links/${link.id}`,
                     method: 'delete'
@@ -53,8 +55,8 @@
                 <TextInput
                   id="title"
                   type="text"
-                  class="mt-1 block w-1/2"
-                  value={$form.title}
+                  class="mt-1 block w-full lg:w-1/2"
+                  bind:value={$form.title}
                   required
                   autofocus
                   autocomplete="title"
@@ -75,14 +77,13 @@
                     id="url"
                     type="text"
                     class="flex-1 block w-full min-w-0 px-3 py-2 border-gray-300 rounded-none rounded-r-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-                    value={$form.url}
+                    bind:value={$form.url}
                     required
-                    autofocus
                     autocomplete="url"
                     on:input={(evt) => ($form.url = evt.detail)}
                   />
                 </div>
-                <InputError class="mt-2" message={$form.errors.title} />
+                <InputError class="mt-2" message={$form.errors.url} />
               </div>
               <button
                 disabled={$form.processing}
