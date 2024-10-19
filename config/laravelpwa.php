@@ -10,7 +10,7 @@ return [
         'background_color' => '#ffffff',
         'theme_color' => '#000000',
         'display' => 'standalone',
-        'orientation' => 'any',
+        'orientation' => 'portrait',
         'status_bar' => 'black',
         'icons' => [
             '72x72' => [
