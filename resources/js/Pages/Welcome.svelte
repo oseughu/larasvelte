@@ -1,12 +1,8 @@
 <script>
   import { Link, page } from '@inertiajs/svelte'
 
-  export let canLogin
-  export let canRegister
-  export let laravelVersion
-  export let phpVersion
-
-  let user = $page.props.auth.user
+  let { canLogin, canRegister, laravelVersion, phpVersion } = $props()
+  let user = $derived($page.props.auth.user)
 
   function handleImageError() {
     document.getElementById('screenshot-container')?.classList.add('!hidden')
@@ -86,7 +82,7 @@
                 src="https://laravel.com/assets/img/welcome/docs-light.svg"
                 alt="Laravel documentation screenshot"
                 class="aspect-video h-full w-full flex-1 rounded-[10px] object-cover object-top drop-shadow-[0px_4px_34px_rgba(0,0,0,0.06)] dark:hidden"
-                on:error={handleImageError}
+                onerror={handleImageError}
               />
               <img
                 src="https://laravel.com/assets/img/welcome/docs-dark.svg"

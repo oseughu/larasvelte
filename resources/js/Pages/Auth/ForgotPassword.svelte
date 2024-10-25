@@ -6,13 +6,14 @@
   import GuestLayout from '@/Layouts/GuestLayout.svelte'
   import { useForm } from '@inertiajs/svelte'
 
-  export let status
+  let { status } = $props()
 
   let form = useForm({
     email: ''
   })
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault()
     $form.post('/forgot-password')
   }
 </script>
@@ -33,7 +34,7 @@
     </div>
   {/if}
 
-  <form on:submit|preventDefault={submit}>
+  <form onsubmit={submit}>
     <div>
       <InputLabel for="email" value="Email" />
 
@@ -51,8 +52,7 @@
     </div>
 
     <div class="mt-4 flex items-center justify-end">
-      <!-- svelte-ignore illegal-attribute-character -->
-      <PrimaryButton xclass:opacity-25={$form.processing} disabled={$form.processing}>
+      <PrimaryButton class={$form.processing && 'opacity-25'} disabled={$form.processing}>
         Email Password Reset Link
       </PrimaryButton>
     </div>

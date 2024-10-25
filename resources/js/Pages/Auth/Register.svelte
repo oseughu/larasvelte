@@ -1,4 +1,4 @@
-<script setup>
+<script>
   import InputError from '@/Components/InputError.svelte'
   import InputLabel from '@/Components/InputLabel.svelte'
   import PrimaryButton from '@/Components/PrimaryButton.svelte'
@@ -14,7 +14,8 @@
     terms: false
   })
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault()
     $form.post('/register', {
       onSuccess: () => $form.reset('password', 'password_confirmation')
     })
@@ -26,7 +27,7 @@
 </svelte:head>
 
 <GuestLayout>
-  <form on:submit|preventDefault={submit}>
+  <form onsubmit={submit}>
     <div>
       <InputLabel for="name" value="Name" />
       <TextInput
@@ -37,7 +38,6 @@
         required
         autofocus
         autocomplete="name"
-        on:input={(evt) => ($form.name = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.name} />
     </div>
@@ -51,7 +51,6 @@
         bind:value={$form.email}
         required
         autocomplete="username"
-        on:input={(evt) => ($form.email = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.email} />
     </div>
@@ -91,8 +90,7 @@
         Already registered?
       </Link>
 
-      <!-- svelte-ignore illegal-attribute-character -->
-      <PrimaryButton class="ms-4" xclass:opacity-25={$form.processing} disabled={$form.processing}>
+      <PrimaryButton class="ms-4 {$form.processing && 'opacity-25'}" disabled={$form.processing}>
         Register
       </PrimaryButton>
     </div>

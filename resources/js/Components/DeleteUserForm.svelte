@@ -8,8 +8,8 @@
   import { useForm } from '@inertiajs/svelte'
   import { tick } from 'svelte'
 
-  let confirmingUserDeletion = false
-  let passwordInput
+  let confirmingUserDeletion = $state(false)
+  let passwordInput = $state()
 
   let form = useForm({
     password: ''
@@ -49,9 +49,9 @@
     </p>
   </header>
 
-  <DangerButton on:click={confirmUserDeletion}>Delete Account</DangerButton>
+  <DangerButton onclick={confirmUserDeletion}>Delete Account</DangerButton>
 
-  <Modal show={confirmingUserDeletion} on:close={closeModal}>
+  <Modal show={confirmingUserDeletion} onclose={closeModal}>
     <div class="p-6">
       <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">
         Are you sure you want to delete your account?
@@ -71,21 +71,21 @@
           type="password"
           class="mt-1 block w-3/4"
           placeholder="Password"
-          on:keyup={deleteUser}
+          onkeyup={deleteUser}
         />
 
         <InputError message={$form.errors.password} class="mt-2" />
       </div>
 
       <div class="mt-6 flex justify-end">
-        <SecondaryButton on:click={closeModal}>Cancel</SecondaryButton>
+        <SecondaryButton onclick={closeModal}>Cancel</SecondaryButton>
 
-        <!-- svelte-ignore illegal-attribute-character -->
+        <!-- svelte-ignore attribute_illegal_colon -->
         <DangerButton
           class="ms-3"
           xclass:opacity-25={$form.processing}
           disabled={$form.processing}
-          on:click={deleteUser}
+          onclick={deleteUser}
         >
           Delete Account
         </DangerButton>

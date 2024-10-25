@@ -7,8 +7,7 @@
   import GuestLayout from '@/Layouts/GuestLayout.svelte'
   import { Link, useForm } from '@inertiajs/svelte'
 
-  export let canResetPassword
-  export let status
+  let { canResetPassword, status } = $props()
 
   let form = useForm({
     email: '',
@@ -16,7 +15,8 @@
     remember: false
   })
 
-  function submit() {
+  function submit(e) {
+    e.preventDefault()
     $form.post('/login', {
       onSuccess: () => $form.reset()
     })
@@ -34,7 +34,7 @@
     </div>
   {/if}
 
-  <form on:submit|preventDefault={submit}>
+  <form onsubmit={submit}>
     <div>
       <InputLabel for="email" value="Email" />
 
@@ -67,7 +67,7 @@
     </div>
 
     <div class="mt-4 block">
-      <!-- svelte-ignore a11y-label-has-associated-control -->
+      <!-- svelte-ignore a11y_label_has_associated_control -->
       <label class="flex items-center">
         <Checkbox name="remember" bind:checked={$form.remember} />
         <span class="ms-2 text-sm text-gray-600 dark:text-gray-400"> Remember me </span>
@@ -84,8 +84,7 @@
         </Link>
       {/if}
 
-      <!-- svelte-ignore illegal-attribute-character -->
-      <PrimaryButton class="ms-4" xclass:opacity-25={$form.processing} disabled={$form.processing}>
+      <PrimaryButton class="ms-4 {$form.processing && 'opacity-25'}" disabled={$form.processing}>
         Log in
       </PrimaryButton>
     </div>
