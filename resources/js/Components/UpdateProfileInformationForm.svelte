@@ -6,8 +6,7 @@
   import { Link, page, useForm } from '@inertiajs/svelte'
   import { fade } from 'svelte/transition'
 
-  export let mustVerifyEmail
-  export let status
+  let { mustVerifyEmail, status } = $props()
 
   const user = $page.props.auth.user
 
@@ -16,7 +15,10 @@
     email: user.email
   })
 
-  const submit = () => $form.patch('/profile')
+  const submit = (e) => {
+    e.preventDefault()
+    $form.patch('/profile')
+  }
 </script>
 
 <section>
@@ -28,7 +30,7 @@
     </p>
   </header>
 
-  <form on:submit|preventDefault={submit} class="mt-6 space-y-6">
+  <form onsubmit={submit} class="mt-6 space-y-6">
     <div>
       <InputLabel for="name" value="Name" />
 

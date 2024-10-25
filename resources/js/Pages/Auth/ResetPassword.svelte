@@ -1,4 +1,6 @@
 <script>
+  import { preventDefault } from 'svelte/legacy'
+
   import InputError from '@/Components/InputError.svelte'
   import InputLabel from '@/Components/InputLabel.svelte'
   import PrimaryButton from '@/Components/PrimaryButton.svelte'
@@ -6,8 +8,7 @@
   import GuestLayout from '@/Layouts/GuestLayout.svelte'
   import { useForm } from '@inertiajs/svelte'
 
-  export let email
-  export let token
+  let { email, token } = $props()
 
   const form = useForm({
     token: token,
@@ -16,7 +17,8 @@
     password_confirmation: null
   })
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault()
     $form.post('/reset-password', {
       onSuccess: () => $form.reset('password', 'password_confirmation')
     })
@@ -28,7 +30,7 @@
 </svelte:head>
 
 <GuestLayout>
-  <form on:submit|preventDefault={submit}>
+  <form onsubmit={submit}>
     <div>
       <InputLabel for="email" value="Email" />
       <TextInput
@@ -39,7 +41,7 @@
         required
         autofocus
         autocomplete="username"
-        on:input={(evt) => ($form.email = evt.detail)}
+        oninput={(evt) => ($form.email = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.email} />
     </div>
@@ -53,7 +55,7 @@
         bind:value={$form.password}
         required
         autocomplete="new-password"
-        on:input={(evt) => ($form.password = evt.detail)}
+        oninput={(evt) => ($form.password = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.password} />
     </div>
@@ -67,14 +69,13 @@
         bind:value={$form.password_confirmation}
         required
         autocomplete="new-password"
-        on:input={(evt) => ($form.password_confirmation = evt.detail)}
+        oninput={(evt) => ($form.password_confirmation = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.password_confirmation} />
     </div>
 
     <div class="flex items-center justify-end mt-4">
-      <!-- svelte-ignore illegal-attribute-character -->
-      <PrimaryButton xclass:opacity-25={$form.processing} disabled={$form.processing}>
+      <PrimaryButton class={$form.processing && 'opacity-25'} disabled={$form.processing}>
         Reset Password
       </PrimaryButton>
     </div>

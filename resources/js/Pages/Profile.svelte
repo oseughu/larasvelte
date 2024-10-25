@@ -1,11 +1,10 @@
 <script>
+  import DeleteUserForm from '@/Components/DeleteUserForm.svelte'
   import UpdatePasswordForm from '@/Components/UpdatePasswordForm.svelte'
   import UpdateProfileInformationForm from '@/Components/UpdateProfileInformationForm.svelte'
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
-  import DeleteUserForm from '@/Components/DeleteUserForm.svelte'
 
-  export let mustVerifyEmail
-  export let status
+  let { mustVerifyEmail, status } = $props();
 </script>
 
 <svelte:head>
@@ -13,9 +12,11 @@
 </svelte:head>
 
 <AuthenticatedLayout>
-  <h2 slot="header" class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
-    Profile
-  </h2>
+  {#snippet header()}
+    <h2  class="text-xl font-semibold leading-tight text-gray-800 dark:text-gray-200">
+      Profile
+    </h2>
+  {/snippet}
 
   <div class="py-12">
     <div class="mx-auto max-w-7xl space-y-6 sm:px-6 lg:px-8">

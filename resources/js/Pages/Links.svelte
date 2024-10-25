@@ -5,14 +5,15 @@
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
   import { inertia, useForm } from '@inertiajs/svelte'
 
-  export let links
+  let { links } = $props();
 
   let form = useForm({
     title: null,
     url: null
   })
 
-  function submit() {
+  function submit(e) {
+    e.preventDefault()
     $form.post('/links', {
       onSuccess: () => $form.reset('title', 'url')
     })
@@ -24,9 +25,11 @@
 </svelte:head>
 
 <AuthenticatedLayout>
-  <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200" slot="header">
-    Links
-  </h2>
+  {#snippet header()}
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200" >
+      Links
+    </h2>
+  {/snippet}
 
   <div class="py-12">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
@@ -48,7 +51,7 @@
               </li>
             {/each}
           {/if}
-          <form on:submit|preventDefault={submit}>
+          <form onsubmit={submit}>
             <div class="mt-8">
               <div>
                 <InputLabel for="title" value="Title" />
@@ -60,7 +63,6 @@
                   required
                   autofocus
                   autocomplete="title"
-                  on:input={(evt) => ($form.title = evt.detail)}
                 />
                 <InputError class="mt-2" message={$form.errors.title} />
               </div>
@@ -80,7 +82,6 @@
                     bind:value={$form.url}
                     required
                     autocomplete="url"
-                    on:input={(evt) => ($form.url = evt.detail)}
                   />
                 </div>
                 <InputError class="mt-2" message={$form.errors.url} />

@@ -10,7 +10,8 @@
     password: ''
   })
 
-  function submit() {
+  function submit(e) {
+    e.preventDefault()
     $form.post('/confirm-password', {
       onFinish: () => $form.reset()
     })
@@ -26,7 +27,7 @@
     This is a secure area of the application. Please confirm your password before continuing.
   </div>
 
-  <form on:submit|preventDefault={submit}>
+  <form onsubmit={submit}>
     <div>
       <InputLabel for="password" value="Password" />
       <TextInput
@@ -42,8 +43,7 @@
     </div>
 
     <div class="mt-4 flex justify-end">
-      <!-- svelte-ignore illegal-attribute-character -->
-      <PrimaryButton class="ms-4" xclass:opacity-25={$form.processing} disabled={$form.processing}>
+      <PrimaryButton class="ms-4 {$form.processing && 'opacity-25'}" disabled={$form.processing}>
         Confirm
       </PrimaryButton>
     </div>

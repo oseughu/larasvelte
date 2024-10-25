@@ -3,16 +3,13 @@
   import GuestLayout from '@/Layouts/GuestLayout.svelte'
   import { Link, useForm } from '@inertiajs/svelte'
 
-  let verificationLinkSent
-  export let status
-  const form = useForm()
+  let verificationLinkSent = $derived(status === 'verification-link-sent')
+  let { status } = $props()
+  const form = useForm({})
 
-  const onSubmit = () => {
+  const submit = (e) => {
+    e.preventDefault()
     $form.post('/email/verification-notification')
-  }
-
-  $: {
-    verificationLinkSent = status === 'verification-link-sent'
   }
 </script>
 
@@ -33,10 +30,9 @@
     </div>
   {/if}
 
-  <form on:submit|preventDefault={onSubmit}>
+  <form onsubmit={submit}>
     <div class="mt-4 flex items-center justify-between">
-      <!-- svelte-ignore illegal-attribute-character -->
-      <PrimaryButton xclass:opacity-25={$form.processing} disabled={$form.processing}>
+      <PrimaryButton class={$form.processing && 'opacity-25'} disabled={$form.processing}>
         Resend Verification Email
       </PrimaryButton>
 
