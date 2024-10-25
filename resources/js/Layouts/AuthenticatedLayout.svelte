@@ -6,7 +6,7 @@
   import ResponsiveNavLink from '@/Components/ResponsiveNavLink.svelte'
   import { Link, page } from '@inertiajs/svelte'
 
-  let { header, children } = $props();
+  let { header, children } = $props()
   let showingNavigationDropdown = $state(false)
   let user = $derived($page.props.auth.user)
 </script>

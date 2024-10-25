@@ -4,7 +4,7 @@
   import UpdateProfileInformationForm from '@/Components/UpdateProfileInformationForm.svelte'
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
 
-  let { mustVerifyEmail, status } = $props();
+  let { mustVerifyEmail, status } = $props()
 </script>
 
 <svelte:head>

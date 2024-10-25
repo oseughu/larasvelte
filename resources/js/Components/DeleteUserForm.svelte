@@ -43,7 +43,7 @@
   <header>
     <h2 class="text-lg font-medium text-gray-900 dark:text-gray-100">Delete Account</h2>
 
-    <p class="w-1/2 mt-1 text-sm text-gray-600 dark:text-gray-400">
+    <p class="lg:w-1/2 text-justify tracking-tight mt-1 text-sm text-gray-600 dark:text-gray-400">
       Once your account is deleted, all of its resources and data will be permanently deleted.
       Before deleting your account, please download any data or information that you wish to retain.
     </p>
@@ -80,10 +80,8 @@
       <div class="mt-6 flex justify-end">
         <SecondaryButton onclick={closeModal}>Cancel</SecondaryButton>
 
-        <!-- svelte-ignore attribute_illegal_colon -->
         <DangerButton
-          class="ms-3"
-          xclass:opacity-25={$form.processing}
+          class={`ms-3 ${$form.processing && 'opacity-25'}`}
           disabled={$form.processing}
           onclick={deleteUser}
         >
