@@ -1,8 +1,8 @@
 var staticCacheName = 'pwa-v' + new Date().getTime()
 var filesToCache = [
-  '/offline',
-  '/resources/css/app.css',
-  '/resources/js/app.js',
+  '/offline.html',
+  '/build/assets/app-*.css',
+  '/build/assets/app-*.js',
   '/images/icons/icon-72x72.png',
   '/images/icons/icon-96x96.png',
   '/images/icons/icon-128x128.png',
@@ -15,7 +15,7 @@ var filesToCache = [
 
 // Cache on install
 self.addEventListener('install', (event) => {
-  this.skipWaiting()
+  self.skipWaiting()
   event.waitUntil(
     caches.open(staticCacheName).then((cache) => {
       return cache.addAll(filesToCache)
