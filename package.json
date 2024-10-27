@@ -2,8 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+        "build": "bun public/generate-manifest.js && vite build",
+        "dev": "bun public/generate-manifest.js && vite"
     },
     "devDependencies": {
         "@inertiajs/svelte": "^2.0.0-beta.2",
