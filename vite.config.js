@@ -18,6 +18,6 @@ export default defineConfig({
       '@': resolve(projectRootDir, 'resources/js'),
       '~': resolve(projectRootDir, 'resources')
     },
-    extensions: ['.js', '.svelte', '.json']
+    extensions: ['.js', '.svelte', '.svelte.js', '.json']
   }
 })
