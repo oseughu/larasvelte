@@ -1,6 +1,6 @@
 const staticCacheName = 'pwa-v' + new Date().getTime()
 const filesToCache = [
-  '/offline.html',
+  './offline.html',
   '/build/assets/app-*.css',
   '/build/assets/app-*.js',
   '/images/icons/icon-72x72.png',
