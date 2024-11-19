@@ -1,7 +1,7 @@
 <script>
   import { Link } from '@inertiajs/svelte'
 
-  let { href, children, ...attrs } = $props();
+  let { href, children, ...attrs } = $props()
 </script>
 
 <Link

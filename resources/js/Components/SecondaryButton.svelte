@@ -1,5 +1,5 @@
 <script>
-  let { type, children, ...attrs } = $props();
+  let { type, children, ...attrs } = $props()
 </script>
 
 <button

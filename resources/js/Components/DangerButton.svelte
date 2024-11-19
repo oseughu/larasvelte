@@ -1,5 +1,5 @@
 <script>
-  let { children, class: className, ...attrs } = $props();
+  let { children, class: className, ...attrs } = $props()
 </script>
 
 <button

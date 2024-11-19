@@ -2,7 +2,7 @@
   import ApplicationLogo from '@/Components/ApplicationLogo.svelte'
   import { Link } from '@inertiajs/svelte'
 
-  let { children } = $props();
+  let { children } = $props()
 </script>
 
 <div

@@ -8,9 +8,7 @@
 
 <AuthenticatedLayout>
   {#snippet header()}
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200" >
-      About
-    </h2>
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200">About</h2>
   {/snippet}
 
   <div class="py-12">

@@ -5,7 +5,7 @@
   import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
   import { inertia, useForm } from '@inertiajs/svelte'
 
-  let { links } = $props();
+  let { links } = $props()
 
   let form = useForm({
     title: null,
@@ -26,9 +26,7 @@
 
 <AuthenticatedLayout>
   {#snippet header()}
-    <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200" >
-      Links
-    </h2>
+    <h2 class="font-semibold text-xl text-gray-800 leading-tight dark:text-gray-200">Links</h2>
   {/snippet}
 
   <div class="py-12">

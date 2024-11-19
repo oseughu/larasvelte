@@ -8,16 +8,17 @@
     contentClasses = 'py-1 bg-white dark:bg-gray-700',
     trigger,
     content
-  } = $props();
+  } = $props()
 
   let open = $state(false)
   let widthClass = $derived({ '48': 'w-48' }[width])
   let alignmentClasses = $derived(
-        align === 'left'
-            ? 'ltr:origin-top-left rtl:origin-top-right start-0'
-            : align === 'right'
-              ? 'ltr:origin-top-right rtl:origin-top-left end-0'
-              : 'origin-top')
+    align === 'left'
+      ? 'ltr:origin-top-left rtl:origin-top-right start-0'
+      : align === 'right'
+        ? 'ltr:origin-top-right rtl:origin-top-left end-0'
+        : 'origin-top'
+  )
 
   function closeOnEscape(e) {
     if (open && e.key === 'Escape') {
