@@ -7,6 +7,7 @@
     <!-- PWA  -->
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
+    <meta name="theme-color" content="#000000">
     <!-- Chrome for Android theme color -->
     {{-- <meta name="theme-color" content="{{ $config['theme_color'] }}">
 
@@ -83,5 +84,11 @@
         }
     </script>
 </body>
+
+<style>
+    html {
+        background-color: #000000;
+    }
+</style>
 
 </html>
