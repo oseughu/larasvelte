@@ -88,18 +88,15 @@
 </body>
 
 <style>
-    html,
-    body {
-        margin: 0;
-        padding: 0;
-        height: 100%;
+    html {
+        background-color: black;
         overflow: hidden;
+        height: 100%;
     }
 
-    .scroll-container {
-        overflow-y: auto;
-        height: 100vh;
-        -webkit-overflow-scrolling: touch;
+    body {
+        height: 100%;
+        overflow: auto;
     }
 </style>
 
