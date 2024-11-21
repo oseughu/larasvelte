@@ -64,7 +64,9 @@
 </head>
 
 <body>
-    @inertia
+    <div class="scroll-container">
+        @inertia
+    </div>
 
     <script src="{{ asset('/service-worker.js') }}"></script>
     <script>
@@ -86,8 +88,18 @@
 </body>
 
 <style>
-    html {
-        background-color: #000000;
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .scroll-container {
+        overflow-y: auto;
+        height: 100vh;
+        -webkit-overflow-scrolling: touch;
     }
 </style>
 
