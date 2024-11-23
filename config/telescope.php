@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\TelescopeAuthMiddleware;
 use Laravel\Telescope\Http\Middleware\Authorize;
 use Laravel\Telescope\Watchers;
 
@@ -59,7 +60,7 @@ return [
 
     'storage' => [
         'database' => [
-            'connection' => env('DB_CONNECTION', 'mysql'),
+            'connection' => env('DB_CONNECTION', 'sqlite'),
             'chunk' => 1000,
         ],
     ],
@@ -76,8 +77,8 @@ return [
     */
 
     'queue' => [
-        'connection' => env('TELESCOPE_QUEUE_CONNECTION', null),
-        'queue' => env('TELESCOPE_QUEUE', null),
+        'connection' => env('TELESCOPE_QUEUE_CONNECTION', 'database'),
+        'queue' => env('TELESCOPE_QUEUE', 'default'),
     ],
 
     /*
@@ -91,9 +92,11 @@ return [
     |
     */
 
-    'middleware' => [
-        'web',
-        Authorize::class,
+    'middleware' => ['web', TelescopeAuthMiddleware::class],
+
+    'basic_auth' => [
+        'username' => env('TELESCOPE_USERNAME'),
+        'password' => env('TELESCOPE_PASSWORD'),
     ],
 
     /*
