@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <link rel="icon" type="image/png" href="/favicon.png" />
+
     <!-- PWA  -->
     <link rel="manifest" href="{{ asset('/manifest.json') }}">
     <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
@@ -58,6 +59,7 @@
     <!-- Tile for Win8 -->
     {{-- <meta name="msapplication-TileColor" content="{{ $config['background_color'] }}">
     <meta name="msapplication-TileImage" content="{{ data_get(end($config['icons']), 'src') }}"> --}}
+
     <title inertia>{{ config('app.name', 'Larasvelte') }}</title>
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     @vite('resources/js/app.js')
@@ -65,9 +67,7 @@
 </head>
 
 <body>
-    <div class="scroll-container">
-        @inertia
-    </div>
+    @inertia
 
     <script src="{{ asset('/service-worker.js') }}"></script>
     <script>
@@ -86,12 +86,12 @@
          console.error('Service workers are not supported.');
         }
     </script>
-</body>
 
-<style>
-    html {
-        background-color: black;
-    }
-</style>
+    <style>
+        html {
+            background-color: black;
+        }
+    </style>
+</body>
 
 </html>
