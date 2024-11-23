@@ -14,12 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('links', function (Blueprint $table) {
-            $table->id();
+            $table->ulid('id')->primary();
             $table->timestamps();
             $table->string('url');
             $table->string('title');
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignUlid('user_id')->nullable()->index();
         });
     }
 
