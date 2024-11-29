@@ -3,7 +3,6 @@
 
   let { canLogin, canRegister, laravelVersion, phpVersion } = $props()
   let user = $derived($page.props.auth.user)
-  let name = process.env.TELESCOPE_USERNAME
 
   function handleImageError() {
     document.getElementById('screenshot-container')?.classList.add('!hidden')
