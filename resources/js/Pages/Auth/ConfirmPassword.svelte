@@ -37,7 +37,6 @@
         bind:value={$form.password}
         required
         autocomplete="current-password"
-        autofocus
       />
       <InputError class="mt-2" message={$form.errors.password} />
     </div>

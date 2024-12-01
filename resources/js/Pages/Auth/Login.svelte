@@ -44,7 +44,6 @@
         class="mt-1 block w-full"
         bind:value={$form.email}
         required
-        autofocus
         autocomplete="username"
       />
 

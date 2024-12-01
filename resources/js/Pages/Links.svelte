@@ -59,7 +59,6 @@
                   class="mt-1 block w-full lg:w-1/2"
                   bind:value={$form.title}
                   required
-                  autofocus
                   autocomplete="title"
                 />
                 <InputError class="mt-2" message={$form.errors.title} />

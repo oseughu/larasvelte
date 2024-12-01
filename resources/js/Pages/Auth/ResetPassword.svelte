@@ -1,6 +1,4 @@
 <script>
-  import { preventDefault } from 'svelte/legacy'
-
   import InputError from '@/Components/InputError.svelte'
   import InputLabel from '@/Components/InputLabel.svelte'
   import PrimaryButton from '@/Components/PrimaryButton.svelte'
@@ -39,9 +37,7 @@
         class="mt-1 block w-full"
         bind:value={$form.email}
         required
-        autofocus
         autocomplete="username"
-        oninput={(evt) => ($form.email = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.email} />
     </div>
@@ -55,7 +51,6 @@
         bind:value={$form.password}
         required
         autocomplete="new-password"
-        oninput={(evt) => ($form.password = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.password} />
     </div>
@@ -69,7 +64,6 @@
         bind:value={$form.password_confirmation}
         required
         autocomplete="new-password"
-        oninput={(evt) => ($form.password_confirmation = evt.detail)}
       />
       <InputError class="mt-2" message={$form.errors.password_confirmation} />
     </div>

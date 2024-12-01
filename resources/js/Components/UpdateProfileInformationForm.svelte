@@ -40,7 +40,6 @@
         class="mt-1 block w-full lg:w-1/2"
         bind:value={$form.name}
         required
-        autofocus
         autocomplete="name"
       />
 
