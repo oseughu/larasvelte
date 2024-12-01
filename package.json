@@ -13,7 +13,7 @@
         "concurrently": "^9.1.0",
         "laravel-vite-plugin": "^1.0.6",
         "postcss": "^8.4.49",
-        "svelte": "5.2.11",
+        "svelte": "5.2.12",
         "svelte-portal": "^2.2.1",
         "svelte-transition": "^0.0.17",
         "tailwindcss": "^3.4.15",
