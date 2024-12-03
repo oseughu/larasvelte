@@ -1,8 +1,8 @@
 <script>
-  import InputError from '@/Components/InputError.svelte'
-  import InputLabel from '@/Components/InputLabel.svelte'
-  import TextInput from '@/Components/TextInput.svelte'
-  import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
+  import InputError from '$/Components/InputError'
+  import InputLabel from '$/Components/InputLabel'
+  import TextInput from '$/Components/TextInput'
+  import AuthenticatedLayout from '$/Layouts/AuthenticatedLayout'
   import { inertia, useForm } from '@inertiajs/svelte'
 
   let { links } = $props()

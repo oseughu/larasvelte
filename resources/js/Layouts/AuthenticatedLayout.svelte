@@ -1,9 +1,9 @@
 <script>
-  import ApplicationLogo from '@/Components/ApplicationLogo.svelte'
-  import Dropdown from '@/Components/Dropdown.svelte'
-  import DropdownLink from '@/Components/DropdownLink.svelte'
-  import NavLink from '@/Components/NavLink.svelte'
-  import ResponsiveNavLink from '@/Components/ResponsiveNavLink.svelte'
+  import ApplicationLogo from '$/Components/ApplicationLogo'
+  import Dropdown from '$/Components/Dropdown'
+  import DropdownLink from '$/Components/DropdownLink'
+  import NavLink from '$/Components/NavLink'
+  import ResponsiveNavLink from '$/Components/ResponsiveNavLink'
   import { Link, page } from '@inertiajs/svelte'
 
   let { header, children } = $props()

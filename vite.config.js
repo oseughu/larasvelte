@@ -15,9 +15,9 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': resolve(projectRootDir, 'resources/js'),
-      '~': resolve(projectRootDir, 'resources')
+      '@': resolve(projectRootDir, 'resources'),
+      $: resolve(projectRootDir, 'resources/js')
     },
-    extensions: ['.js', '.svelte', '.svelte.js', '.json']
+    extensions: ['.svelte', '.svelte.js', '.js', '.json', '.css']
   }
 })

@@ -1,5 +1,5 @@
 <script>
-  import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
+  import AuthenticatedLayout from '$/Layouts/AuthenticatedLayout'
 </script>
 
 <svelte:head>

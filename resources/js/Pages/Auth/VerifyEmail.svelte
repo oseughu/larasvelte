@@ -1,6 +1,6 @@
 <script>
-  import PrimaryButton from '@/Components/PrimaryButton.svelte'
-  import GuestLayout from '@/Layouts/GuestLayout.svelte'
+  import PrimaryButton from '$/Components/PrimaryButton'
+  import GuestLayout from '$/Layouts/GuestLayout'
   import { Link, useForm } from '@inertiajs/svelte'
 
   let verificationLinkSent = $derived(status === 'verification-link-sent')

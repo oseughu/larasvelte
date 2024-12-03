@@ -1,10 +1,10 @@
 <script>
-  import Checkbox from '@/Components/Checkbox.svelte'
-  import InputError from '@/Components/InputError.svelte'
-  import InputLabel from '@/Components/InputLabel.svelte'
-  import PrimaryButton from '@/Components/PrimaryButton.svelte'
-  import TextInput from '@/Components/TextInput.svelte'
-  import GuestLayout from '@/Layouts/GuestLayout.svelte'
+  import Checkbox from '$/Components/Checkbox'
+  import InputError from '$/Components/InputError'
+  import InputLabel from '$/Components/InputLabel'
+  import PrimaryButton from '$/Components/PrimaryButton'
+  import TextInput from '$/Components/TextInput'
+  import GuestLayout from '$/Layouts/GuestLayout'
   import { Link, useForm } from '@inertiajs/svelte'
 
   let { canResetPassword, status } = $props()

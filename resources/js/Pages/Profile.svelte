@@ -1,8 +1,8 @@
 <script>
-  import DeleteUserForm from '@/Components/DeleteUserForm.svelte'
-  import UpdatePasswordForm from '@/Components/UpdatePasswordForm.svelte'
-  import UpdateProfileInformationForm from '@/Components/UpdateProfileInformationForm.svelte'
-  import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.svelte'
+  import DeleteUserForm from '$/Components/DeleteUserForm'
+  import UpdatePasswordForm from '$/Components/UpdatePasswordForm'
+  import UpdateProfileInformationForm from '$/Components/UpdateProfileInformationForm'
+  import AuthenticatedLayout from '$/Layouts/AuthenticatedLayout'
 
   let { mustVerifyEmail, status } = $props()
 </script>

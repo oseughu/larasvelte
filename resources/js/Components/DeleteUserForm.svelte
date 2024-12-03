@@ -1,10 +1,10 @@
 <script>
-  import DangerButton from '@/Components/DangerButton.svelte'
-  import InputError from '@/Components/InputError.svelte'
-  import InputLabel from '@/Components/InputLabel.svelte'
-  import Modal from '@/Components/Modal.svelte'
-  import SecondaryButton from '@/Components/SecondaryButton.svelte'
-  import TextInput from '@/Components/TextInput.svelte'
+  import DangerButton from '$/Components/DangerButton'
+  import InputError from '$/Components/InputError'
+  import InputLabel from '$/Components/InputLabel'
+  import Modal from '$/Components/Modal'
+  import SecondaryButton from '$/Components/SecondaryButton'
+  import TextInput from '$/Components/TextInput'
   import { useForm } from '@inertiajs/svelte'
   import { tick } from 'svelte'
 

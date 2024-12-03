@@ -1,6 +1,6 @@
+import '@/css/app'
 import { createInertiaApp } from '@inertiajs/svelte'
 import { mount } from 'svelte'
-import '../css/app.css'
 import './bootstrap'
 
 createInertiaApp({

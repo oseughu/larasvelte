@@ -1,5 +1,5 @@
 <script>
-  import ApplicationLogo from '@/Components/ApplicationLogo.svelte'
+  import ApplicationLogo from '$/Components/ApplicationLogo'
   import { Link } from '@inertiajs/svelte'
 
   let { children } = $props()
