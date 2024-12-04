@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./resources/*"],
+      "$/*": ["./resources/js/*"]
+    }
+  },
+  "exclude": ["./node_modules/"]
+}
