@@ -63,7 +63,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "bunx concurrently -k -c \"#bb9980,#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"maildev\" \"php artisan serve\" \"php artisan queue:work:watch --queue=default\" \"php artisan pail\" \"bun run dev\" --names=mailer,server,queue,logs,vite"
+            "bunx concurrently -k -c \"#aaff00,#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"maildev\" \"php artisan serve\" \"php artisan queue:work:watch --queue=default\" \"php artisan pail\" \"bun run dev\" --names=mailer,server,queue,logs,vite"
         ]
     },
     "extra": {
