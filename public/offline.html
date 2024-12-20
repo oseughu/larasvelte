@@ -15,40 +15,45 @@
             box-sizing: border-box;
             height: 100%;
             width: 100%;
+            background-color: #2a2a2f;
             font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
+        /* Background: a subtle dark gradient */
         .error_body {
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #f0f4ff 0%, #d8dcf0 100%);
+            background: linear-gradient(135deg, #2a2a2f 0%, #3a3a44 100%);
             min-height: 100vh;
             padding: 2rem;
         }
 
+        /* Container: dark background with a subtle shadow */
         .error_container {
             text-align: center;
             max-width: 500px;
             width: 100%;
-            background: #ffffffc9;
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
+            background: #2f2f38;
+            border-radius: 10px;
             padding: 2rem;
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
         }
 
+        /* Heading: slightly lighter text for contrast */
         .error_message {
             font-size: 1.5rem;
             font-weight: 700;
-            color: #444;
+            color: #ccc;
             margin-bottom: 1.5rem;
         }
 
+        /* Paragraph: slightly lighter grey for body text */
         .error_paragraph {
-            color: #555;
+            color: #b0b0b0;
             font-size: 1rem;
             margin-bottom: 2rem;
+            line-height: 1.5;
         }
 
         .error_paragraph span {
@@ -56,24 +61,24 @@
             margin-top: 0.5rem;
         }
 
+        /* Button: darker gradient, lighter text */
         .error_btn {
             display: inline-block;
             padding: 0.75rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
-            background: linear-gradient(to right, #6e749e, #8a90b6);
+            color: #f0f0f0;
+            background: linear-gradient(to right, #45465e, #5a5d7a);
             border: none;
-            border-radius: 8px;
-            color: #fff;
+            border-radius: 6px;
             text-decoration: none;
             transition: background 0.3s ease;
         }
 
         .error_btn:hover {
-            background: linear-gradient(to right, #5a5f8a, #7c82a7);
+            background: linear-gradient(to right, #3c3d55, #51536e);
         }
 
-        /* Responsive adjustments */
         @media (max-width: 540px) {
             .error_message {
                 font-size: 1.25rem;
@@ -94,12 +99,13 @@
 <body>
     <div class="error_body">
         <div class="error_container">
-            <h2 class="error_message">Whoops! You’ve slipped off the grid...</h2>
+            <h2 class="error_message">Oops! You’ve slipped off the grid.</h2>
             <p class="error_paragraph">
-                It looks like your internet took a little holiday.
-                <br><span>Grab a cup of tea, check your Wi-Fi, and let’s reconnect you back to the fun.</span>
+                It seems your internet decided to take a quick break.
+                <br><span>Grab a warm drink, give your Wi-Fi a friendly nudge, and let's get you back online
+                    soon.</span>
             </p>
-            <a href="/" class="error_btn">Let’s head back!</a>
+            <a href="/" class="error_btn">head back home</a>
         </div>
     </div>
 </body>
