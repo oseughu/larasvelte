@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,62 +8,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        .error_body {
+        body,
+        html {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            height: 100vh;
+            height: 100%;
             width: 100%;
-            background: #f9f9f9;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
         }
 
-        .error_container .error_heading {
-            color: transparent;
-            font-size: 160px;
-            margin: 0;
-            font-weight: 900;
-            letter-spacing: 20px;
-            background-size: 100% 100%;
-            background: linear-gradient(90deg, #6b719b 38%, #9da3cc 53%, #979dce 65%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -moz-background-clip: text;
-            -ms-background-clip: text;
+        .error_body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #f0f4ff 0%, #d8dcf0 100%);
+            min-height: 100vh;
+            padding: 2rem;
         }
 
-        @media (max-width: 540px) {
-            .error_container .error_heading {
-                font-size: 120px;
-                letter-spacing: 10px;
-            }
+        .error_container {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            background: #ffffffc9;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .error_container .error_btn {
-            background-color: #6e749e !important;
+        .error_message {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+
+        .error_paragraph {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .error_paragraph span {
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        .error_btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            background: linear-gradient(to right, #6e749e, #8a90b6);
             border: none;
-            outline: none;
+            border-radius: 8px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.3s ease;
         }
 
-        .error_container .error_btn:focus {
-            box-shadow: none !important;
+        .error_btn:hover {
+            background: linear-gradient(to right, #5a5f8a, #7c82a7);
         }
 
-        .error_container .error_message,
-        .error_container .error_paragraph {
-            color: #787878;
+        /* Responsive adjustments */
+        @media (max-width: 540px) {
+            .error_message {
+                font-size: 1.25rem;
+            }
+
+            .error_paragraph {
+                font-size: 0.95rem;
+            }
+
+            .error_btn {
+                font-size: 0.9rem;
+                padding: 0.6rem 1.2rem;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="error_body">
-        <div
-            class="container error_container d-flex justify-content-center align-items-center flex-column w-100 h-100 p-5 text-center">
-            <h2 class="error_message text-center mb-3">Boo! You don't have an internet connection</h2>
-            <p class="error_paragraph text-center mb-5">
-                Please check your network connection and try again.
+        <div class="error_container">
+            <h2 class="error_message">Whoops! You’ve slipped off the grid...</h2>
+            <p class="error_paragraph">
+                It looks like your internet took a little holiday.
+                <br><span>Grab a cup of tea, check your Wi-Fi, and let’s reconnect you back to the fun.</span>
             </p>
-            <a href="/" class="btn btn-primary error_btn">Back to Home Page</a>
+            <a href="/" class="error_btn">Let’s head back!</a>
         </div>
     </div>
 </body>
