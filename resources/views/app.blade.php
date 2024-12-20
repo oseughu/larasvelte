@@ -68,12 +68,10 @@
 
 <body>
     @inertia
-
     <script src="{{ asset('service-worker.js') }}"></script>
     <script>
         if ("serviceWorker" in navigator) {
-          // Register a service worker hosted at the root of the
-          // site using the default scope.
+          // Register a service worker hosted at the root of the site using the default scope.
           navigator.serviceWorker.register('/service-worker.js').then(
           (registration) => {
              console.log('Service worker registration succeeded:', registration);
