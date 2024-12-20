@@ -1,5 +1,5 @@
 import fs from 'fs'
-import templateManifest from './manifest.template.json' assert { type: 'json' }
+import templateManifest from './manifest-template.json' assert { type: 'json' }
 
 // PLEASE DO NOT EDIT the mnaifest.json file directly
 // Edit only values not declared here in manifest.template.json instead

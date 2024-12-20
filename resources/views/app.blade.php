@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
 
     <!-- PWA  -->
-    <link rel="manifest" href="{{ asset('/manifest.json') }}">
+    <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link rel="apple-touch-icon" href="{{ asset('logo.png') }}">
     <meta name="theme-color" content="#000000">
     <!-- Chrome for Android theme color -->
@@ -60,7 +60,7 @@
     {{-- <meta name="msapplication-TileColor" content="{{ $config['background_color'] }}">
     <meta name="msapplication-TileImage" content="{{ data_get(end($config['icons']), 'src') }}"> --}}
 
-    <title inertia>{{ config('app.name', 'Larasvelte') }}</title>
+    <title inertia>{{ config('app.name') }}</title>
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @inertiaHead
@@ -69,7 +69,7 @@
 <body>
     @inertia
 
-    <script src="{{ asset('/service-worker.js') }}"></script>
+    <script src="{{ asset('service-worker.js') }}"></script>
     <script>
         if ("serviceWorker" in navigator) {
           // Register a service worker hosted at the root of the
@@ -86,12 +86,6 @@
          console.error('Service workers are not supported.');
         }
     </script>
-
-    <style>
-        html {
-            background-color: black;
-        }
-    </style>
 </body>
 
 </html>

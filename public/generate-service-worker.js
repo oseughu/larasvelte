@@ -1,0 +1,32 @@
+import fs from 'fs'
+import path from 'path'
+import { fileURLToPath } from 'url'
+
+// Resolve __dirname in ES modules
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
+// Path to the Vite manifest file
+const manifestPath = path.join(__dirname, './build/manifest.json')
+
+// Read and parse the manifest
+const manifestData = await fs.promises.readFile(manifestPath, 'utf8')
+const manifest = JSON.parse(manifestData)
+
+// Extract hashed asset file paths
+const hashedAssets = Object.values(manifest).map((entry) => `./build/${entry.file}`)
+
+// Path to your service worker template
+const swTemplatePath = path.join(__dirname, './service-worker-template.js')
+let swContents = await fs.promises.readFile(swTemplatePath, 'utf8')
+
+swContents = swContents.replace(
+  '__VITE_BUILD_FILES__',
+  hashedAssets.map((file) => `'${file}'`).join(',\n  ')
+)
+
+// Path to write the updated service worker
+const swOutputPath = path.join(__dirname, './service-worker.js')
+await fs.promises.writeFile(swOutputPath, swContents, 'utf8')
+
+console.log('Service worker updated with hashed assets!')
