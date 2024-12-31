@@ -24,11 +24,9 @@ class LinkController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-
     {
         // Put the user id in the request
         $request->merge(['user_id' => \Auth::id()]);
@@ -49,13 +47,13 @@ class LinkController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Link  $link
      * @return \Illuminate\Http\Response
      */
     public function destroy(Link $link)
     {
         // delete the link
         $link->delete();
+
         return redirect()->route('links.index');
     }
 }
