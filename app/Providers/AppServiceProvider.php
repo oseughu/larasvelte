@@ -23,9 +23,6 @@ class AppServiceProvider extends ServiceProvider
         $this->sqliteOptimize();
     }
 
-    /**
-     * @return void
-     */
     protected function sqliteOptimize(): void
     {
         $db = DB::connection();
