@@ -10,14 +10,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $db = DB::connection();
-
-        if ($db->getDriverName() !== 'sqlite') {
-            return;
+        if (DB::getDriverName() === 'sqlite') {
+            DB::unprepared(
+                <<<'SQL'
+                PRAGMA auto_vacuum = incremental;
+                PRAGMA journal_mode = WAL;
+                PRAGMA page_size = 32768;
+                SQL
+            );
         }
-
-        $db->unprepared('PRAGMA journal_mode = WAL;');
-        $db->unprepared('PRAGMA page_size = 32768;');
-        $db->unprepared('PRAGMA auto_vacuum = INCREMENTAL;');
     }
 };
