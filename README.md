@@ -2,16 +2,17 @@
 
 This repository is a Laravel + Inertia + Svelte 5 + Progressive Web App (PWA) Starter Kit designed to help you kickstart your web application development. It integrates modern tools like SQLite, Bun, TailwindCSS, and ShadCN UI to provide a fully functional foundation for building reactive and scalable web applications.
 
-Key Features
-• Laravel + Inertia: A robust backend combined with a reactive front end.
-• Svelte 5: Utilises the latest version of Svelte for seamless front-end interactivity.
-• Progressive Web App (PWA): Configured to work offline and feel like a native app.
-• Bun: Ultra-fast JavaScript runtime for bundling and running your front-end assets.
-• TailwindCSS: Rapid UI development with utility-first CSS.
-• ShadCN UI: Modern and accessible UI components out of the box.
-• Subdomain Routing: Includes an example configuration in RouteServiceProvider with additional routes in routes/admin.php.
+## Key Features
 
-Installation
+- Laravel + Inertia: A robust backend combined with a reactive front end.
+- Svelte 5: Utilises the latest version of Svelte for seamless front-end interactivity.
+- Progressive Web App (PWA): Configured to work offline and feel like a native app.
+- Bun: Ultra-fast JavaScript runtime for bundling and running your front-end assets.
+- TailwindCSS: Rapid UI development with utility-first CSS.
+- ShadCN UI: Modern and accessible UI components out of the box.
+- Subdomain Routing: Includes an example configuration in RouteServiceProvider with additional routes in routes/admin.php.
+
+## Getting Started
 
 Follow these steps to get started quickly:
 
