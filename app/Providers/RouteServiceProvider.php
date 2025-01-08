@@ -38,7 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         // subdomain routing
-        // $prefix = env('APP_ENV') !== 'production' ? 'staging-admin' : 'admin';
+        // $prefix = env('APP_ENV') !== 'production' ? 'dev-admin' : 'admin';
         // Route::domain($prefix . '.' . env('APP_URL'))
         //     ->middleware('web')
         //     ->namespace($this->namespace)
