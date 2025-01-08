@@ -10,7 +10,6 @@ This repository is a Laravel + Inertia + Svelte 5 + Progressive Web App (PWA) St
 - Bun: Ultra-fast JavaScript runtime for bundling and running your front-end assets.
 - TailwindCSS: Rapid UI development with utility-first CSS.
 - ShadCN UI: Modern and accessible UI components out of the box.
-- Subdomain Routing: Includes an example configuration in RouteServiceProvider with additional routes in routes/admin.php.
 
 ### Requirements
 
