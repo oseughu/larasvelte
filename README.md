@@ -1,6 +1,6 @@
 # Larasvelte Starter Kit by Ose Ughu
 
-This repository is a Laravel + Inertia + Svelte 5 + Progressive Web App (PWA) Starter Kit designed to help you kickstart your web application development. It integrates modern tools like SQLite, Bun, TailwindCSS, and ShadCN UI to provide a fully functional foundation for building reactive and scalable web applications.
+This repository is a Laravel + Inertia + Svelte 5 + Progressive Web App (PWA) Starter Kit, designed to help you kickstart your web application development. It integrates modern tools like SQLite, Bun, TailwindCSS and ShadCN UI to provide a fully functional foundation for building reactive and scalable web applications.
 
 ## Key Features
 
@@ -12,58 +12,57 @@ This repository is a Laravel + Inertia + Svelte 5 + Progressive Web App (PWA) St
 - ShadCN UI: Modern and accessible UI components out of the box.
 - Subdomain Routing: Includes an example configuration in RouteServiceProvider with additional routes in routes/admin.php.
 
-## Getting Started
+### Requirements
 
-Follow these steps to get started quickly:
+- PHP: 8.3 or later
+- Composer
+- [Bun](https://bun.sh) (recommended) or Node.js
+- SQLite (default) or another database engine of your choice
+
+### Getting Started
 
 Clone the Repository:
 
 ```bash
-git clone <https://github.com/oseughu/larasvelte.git>
+git clone https://github.com/oseughu/larasvelte.git
 cd larasvelte
 ```
 
-Install PHP Dependencies:
+Install PHP dependencies (this also sets up the SQLite database and the .env file):
 
 ```bash
 composer install
 ```
 
-Install JavaScript Dependencies:
-
-```bash
-bun install
-```
-
-Run following command to start up everything (Backend Server, Frontend Server, Queue and Mailer):
+Run the following command to start up everything (Backend Server, Frontend Server, Queue, and Mailer):
 
 ```bash
 composer run dev
 ```
 
-Subdomain Routing Example
+### Subdomain Routing Example
 
 The codebase includes an example of subdomain routing configured in the RouteServiceProvider. The subdomain routing example is specifically for an admin panel and uses routes/admin.php.
 
-If subdomain routing is not required for your project, you can remove it by either:
+If subdomain routing is not required for your project, you can remove it by either: 1. Commenting out or deleting the configuration in the RouteServiceProvider. 2. Removing the routes/admin.php file.
 
-1. Commenting out or deleting the configuration in the RouteServiceProvider. \
-2. Removing the routes/admin.php file.
+### PWA Customization
 
-Start Building
+This starter kit is preconfigured as a Progressive Web App (PWA), enabling offline functionality and native app-like behaviour.
+
+To customise the behaviour or appearance of the PWA:
+
+1. Modify the service-worker-template.js file to control how the service worker handles caching and offline functionality.
+2. Update the manifest-template.json file to define the app’s metadata (e.g., name, theme colour, icons).
+
+No other files need to be modified for PWA customisation.
 
 This starter kit is highly customisable! Clone the repository and delete any files or features you don’t need. It’s flexible enough to support a wide range of use cases, from small side projects to large-scale applications.
 
-Contributions
+### Contributions
 
-We welcome contributions! Whether it’s bug fixes, feature additions, or general improvements, feel free to submit a pull request.
+I welcome contributions! Whether it’s bug fixes, feature additions, or general improvements, feel free to submit a pull request.
 
-We regularly update packages and dependencies to ensure the codebase stays modern and secure.
-
-Requirements
-• PHP 8.3 or later
-• Composer
-• Bun (recommended) or Node.js
-• SQLite (default) or your preferred database engine
+I regularly update packages and dependencies to ensure the codebase stays modern and secure.
 
 Happy coding! 🚀
