@@ -38,10 +38,11 @@ class RouteServiceProvider extends ServiceProvider
         });
 
         // subdomain routing
-        Route::domain('admin.' . env('APP_URL'))
-            ->middleware('web')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/admin.php'));
+        // $prefix = env('APP_ENV') !== 'production' ? 'staging-admin' : 'admin';
+        // Route::domain($prefix . '.' . env('APP_URL'))
+        //     ->middleware('web')
+        //     ->namespace($this->namespace)
+        //     ->group(base_path('routes/admin.php'));
     }
 
     /**

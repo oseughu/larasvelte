@@ -1,66 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Larasvelte Starter Kit by Ose Ughu
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This repository is a Laravel + Inertia + Svelte 5 + Progressive Web App (PWA) Starter Kit designed to help you kickstart your web application development. It integrates modern tools like SQLite, Bun, TailwindCSS, and ShadCN UI to provide a fully functional foundation for building reactive and scalable web applications.
 
-## About Laravel
+Key Features
+• Laravel + Inertia: A robust backend combined with a reactive front end.
+• Svelte 5: Utilises the latest version of Svelte for seamless front-end interactivity.
+• Progressive Web App (PWA): Configured to work offline and feel like a native app.
+• Bun: Ultra-fast JavaScript runtime for bundling and running your front-end assets.
+• TailwindCSS: Rapid UI development with utility-first CSS.
+• ShadCN UI: Modern and accessible UI components out of the box.
+• Subdomain Routing: Includes an example configuration in RouteServiceProvider with additional routes in routes/admin.php.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Installation
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Follow these steps to get started quickly:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Clone the Repository:
 
-## Learning Laravel
+```bash
+git clone <https://github.com/oseughu/larasvelte.git>
+cd larasvelte
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Install PHP Dependencies:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+```bash
+composer install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Install JavaScript Dependencies:
 
-## Laravel Sponsors
+```bash
+bun install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+Run following command to start up everything (Backend Server, Frontend Server, Queue and Mailer):
 
-### Premium Partners
+```bash
+composer run dev
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+Subdomain Routing Example
 
-## Contributing
+The codebase includes an example of subdomain routing configured in the RouteServiceProvider. The subdomain routing example is specifically for an admin panel and uses routes/admin.php.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+If subdomain routing is not required for your project, you can remove it by either:
 
-## Code of Conduct
+1. Commenting out or deleting the configuration in the RouteServiceProvider. \
+2. Removing the routes/admin.php file.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Start Building
 
-## Security Vulnerabilities
+This starter kit is highly customisable! Clone the repository and delete any files or features you don’t need. It’s flexible enough to support a wide range of use cases, from small side projects to large-scale applications.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Contributions
 
-## License
+We welcome contributions! Whether it’s bug fixes, feature additions, or general improvements, feel free to submit a pull request.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+We regularly update packages and dependencies to ensure the codebase stays modern and secure.
+
+Requirements
+• PHP 8.3 or later
+• Composer
+• Bun (recommended) or Node.js
+• SQLite (default) or your preferred database engine
+
+Happy coding! 🚀
