@@ -54,9 +54,9 @@ To customise the behaviour or appearance of the PWA:
 1. Modify the `public/service-worker-template.js` file to control how the service worker handles caching and offline functionality.
 2. Update the `public/manifest-template.json` file to define the app’s metadata (e.g., name, theme colour, icons).
 
-No other files need to be modified for PWA customisation.
+No other files need to be modified for PWA customization.
 
-This starter kit is highly customisable! Clone the repository and delete any files or features you don’t need. It’s flexible enough to support a wide range of use cases, from small side projects to large-scale applications.
+This starter kit is highly customizable! Clone the repository and delete any files or features you don’t need. It’s flexible enough to support a wide range of use cases, from small side projects to large-scale applications.
 
 ### Contributions
 
