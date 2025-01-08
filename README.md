@@ -42,9 +42,9 @@ composer run dev
 
 ### Subdomain Routing Example
 
-The codebase includes an example of subdomain routing configured in the RouteServiceProvider. The subdomain routing example is specifically for an admin panel and uses routes/admin.php.
+The codebase includes an example of subdomain routing configured in the `RouteServiceProvider`. The subdomain routing example is specifically for an admin panel and uses `routes/admin.php`.
 
-If subdomain routing is not required for your project, you can remove it by either: 1. Commenting out or deleting the configuration in the RouteServiceProvider. 2. Removing the routes/admin.php file.
+If subdomain routing is not required for your project, you can remove it by either: 1. Commenting out or deleting the configuration in the `RouteServiceProvider`. 2. Removing the `routes/admin.php` file.
 
 ### PWA Customization
 
@@ -52,8 +52,8 @@ This starter kit is preconfigured as a Progressive Web App (PWA), enabling offli
 
 To customise the behaviour or appearance of the PWA:
 
-1. Modify the service-worker-template.js file to control how the service worker handles caching and offline functionality.
-2. Update the manifest-template.json file to define the app’s metadata (e.g., name, theme colour, icons).
+1. Modify the `public/service-worker-template.js` file to control how the service worker handles caching and offline functionality.
+2. Update the `public/manifest-template.json` file to define the app’s metadata (e.g., name, theme colour, icons).
 
 No other files need to be modified for PWA customisation.
 
