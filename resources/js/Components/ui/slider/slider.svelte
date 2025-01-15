@@ -2,12 +2,16 @@
 	import { Slider as SliderPrimitive } from "bits-ui";
 	import { cn } from "$/Lib/utils.js";
 
-	let { ref = $bindable(null), value = $bindable([0]), class: className, ...restProps } = $props();
+	let { ref = $bindable(null), value = $bindable(), class: className, ...restProps } = $props();
 </script>
 
+<!--
+Discriminated Unions + Destructing (required for bindable) do not
+get along, so we shut typescript up by casting `value` to `never`.
+-->
 <SliderPrimitive.Root
-	bind:ref
 	bind:value
+	bind:ref
 	class={cn("relative flex w-full touch-none select-none items-center", className)}
 	{...restProps}
 >
