@@ -1,6 +1,6 @@
 import { createInertiaApp } from '@inertiajs/svelte'
 import { hydrate, mount } from 'svelte'
-import './bootstrap'
+// import './bootstrap'
 
 createInertiaApp({
   title: (title) => `${title} - ${appName}`,
