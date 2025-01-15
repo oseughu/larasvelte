@@ -3,7 +3,8 @@
     "type": "module",
     "scripts": {
         "build": "vite build && vite build --ssr && bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build && vite build --ssr",
-        "dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite"
+        "dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite",
+        "shadcn:update": "bunx shadcn-svelte@next update --all"
     },
     "devDependencies": {
         "@inertiajs/svelte": "^2.0.2",
