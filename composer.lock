@@ -3581,16 +3581,16 @@
         },
         {
             "name": "resend/resend-php",
-            "version": "v0.15.0",
+            "version": "v0.15.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/resend/resend-php.git",
-                "reference": "4714dc672d06ceb8834b2d0aadec95ecdd736cd2"
+                "reference": "53840a00e0aa234f39ee4da3a679b97df8fd2284"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/resend/resend-php/zipball/4714dc672d06ceb8834b2d0aadec95ecdd736cd2",
-                "reference": "4714dc672d06ceb8834b2d0aadec95ecdd736cd2",
+                "url": "https://api.github.com/repos/resend/resend-php/zipball/53840a00e0aa234f39ee4da3a679b97df8fd2284",
+                "reference": "53840a00e0aa234f39ee4da3a679b97df8fd2284",
                 "shasum": ""
             },
             "require": {
@@ -3632,9 +3632,9 @@
             ],
             "support": {
                 "issues": "https://github.com/resend/resend-php/issues",
-                "source": "https://github.com/resend/resend-php/tree/v0.15.0"
+                "source": "https://github.com/resend/resend-php/tree/v0.15.1"
             },
-            "time": "2024-12-19T18:50:25+00:00"
+            "time": "2025-01-03T23:17:55+00:00"
         },
         {
             "name": "symfony/clock",
@@ -9199,12 +9199,12 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {},
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.2"
     },
-    "platform-dev": {},
+    "platform-dev": [],
     "plugin-api-version": "2.6.0"
 }
