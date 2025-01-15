@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build --ssr && bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build --ssr",
+        "build": "vite build && vite build --ssr && bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build && vite build --ssr",
         "dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite"
     },
     "devDependencies": {
