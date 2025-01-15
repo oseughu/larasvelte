@@ -6,8 +6,8 @@
         "dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite"
     },
     "devDependencies": {
-        "@inertiajs/svelte": "^2.0.0",
-        "@internationalized/date": "^3.6.0",
+        "@inertiajs/svelte": "^2.0.1",
+        "@internationalized/date": "^3.7.0",
         "@sveltejs/vite-plugin-svelte": "^5.0.3",
         "autoprefixer": "^10.4.20",
         "axios": "^1.7.9",
@@ -21,8 +21,8 @@
         "maildev": "^2.2.1",
         "mode-watcher": "^0.5.0",
         "paneforge": "^1.0.0-next.1",
-        "postcss": "^8.4.49",
-        "svelte": "5.17.3",
+        "postcss": "^8.5.1",
+        "svelte": "5.18.0",
         "svelte-portal": "^2.2.1",
         "svelte-sonner": "^0.3.28",
         "svelte-transition": "^0.0.17",
