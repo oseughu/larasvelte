@@ -29,20 +29,21 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
-            Route::prefix('api')
-                ->middleware('api')
-                ->group(base_path('routes/api.php'));
-
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
         });
 
         // subdomain routing
         // $admin_url = env('APP_ENV') !== 'production' ? 'dev-admin' : 'admin';
+        // $api_url = env('APP_ENV') !== 'production' ? 'dev-api' : 'api';
         // Route::domain($admin_url . '.' . env('APP_URL'))
         //     ->middleware('web')
         //     ->namespace($this->namespace)
         //     ->group(base_path('routes/admin.php'));
+        // Route::domain($api_url . '.' . env('APP_URL'))
+        //     ->middleware('api')
+        //     ->namespace($this->namespace)
+        //     ->group(base_path('routes/api.php'));
     }
 
     /**
