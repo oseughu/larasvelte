@@ -63,7 +63,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -k -c \"#aaff00,#93c5fd,#c4b5fd,#fb7185\" \"maildev\" \"php artisan serve\" \"php artisan queue:listen --queue=default\" \"bun run dev\" --names=mailer,server,queue,vite"
+            "npx concurrently -k -c \"#aaff00,#93c5fd,#c4b5fd,#b2b2b2,#fb7185\" \"maildev\" \"php artisan serve\" \"php artisan queue:listen --queue=default\" \"php artisan inertia:start-ssr\" \"bun run dev\" --names=mailer,server,queue,inertia-ssr,vite"
         ]
     },
     "extra": {
