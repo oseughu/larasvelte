@@ -1,0 +1,7 @@
+{
+  "recommendations": [
+    "svelte.svelte-vscode",
+    "laravel.vscode-laravel",
+    "bmewburn.vscode-intelephense-client"
+  ]
+}

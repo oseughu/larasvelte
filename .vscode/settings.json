@@ -1,0 +1,9 @@
+{
+  //   "workbench.editor.labelFormat": "short",
+  "editor.codeActionsOnSave": {
+    "source.sortImports": "always"
+  },
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  }
+}
