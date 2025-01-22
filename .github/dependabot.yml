@@ -4,7 +4,7 @@ updates:
   - package-ecosystem: 'composer'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'weekly'
     labels:
       - 'dependencies'
 
@@ -12,7 +12,7 @@ updates:
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'daily'
+      interval: 'weekly'
     labels:
       - 'dependencies'
       - 'devDependencies'
