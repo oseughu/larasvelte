@@ -45,7 +45,7 @@
         "post-install-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate --ansi",
+            "@php -r \"\\$env = file_exists('.env') ? file_get_contents('.env') : ''; if (!preg_match('/^APP_KEY=(?!\\s*\\$).+$/m', \\$env)) { system('php artisan key:generate') || exit(0); }\"",
             "@php artisan migrate --force --ansi"
         ],
         "post-update-cmd": [
