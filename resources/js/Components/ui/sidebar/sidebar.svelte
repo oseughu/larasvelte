@@ -1,6 +1,6 @@
 <script>
 	import * as Sheet from "$/Components/ui/sheet/index.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	import { SIDEBAR_WIDTH_MOBILE } from "./constants.js";
 	import { useSidebar } from "./context.svelte.js";
 

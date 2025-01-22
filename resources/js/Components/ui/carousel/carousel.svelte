@@ -1,6 +1,6 @@
 <script>
 	import { setEmblaContext } from "./context.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let {
 		opts = {},

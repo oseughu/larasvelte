@@ -1,7 +1,7 @@
 <script>
 	import { Command as CommandPrimitive } from "bits-ui";
 	import Search from "lucide-svelte/icons/search";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, value = $bindable(""), ...restProps } = $props();
 </script>

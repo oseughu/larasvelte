@@ -1,6 +1,6 @@
 <script>
 	import * as Tooltip from "$/Components/ui/tooltip/index.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	import {
 		SIDEBAR_COOKIE_MAX_AGE,
 		SIDEBAR_COOKIE_NAME,

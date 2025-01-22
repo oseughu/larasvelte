@@ -1,7 +1,7 @@
 <script>
 	import emblaCarouselSvelte from "embla-carousel-svelte";
 	import { getEmblaContext } from "./context.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, children, ...restProps } = $props();
 

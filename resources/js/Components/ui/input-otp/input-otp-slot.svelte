@@ -1,6 +1,6 @@
 <script>
 	import { PinInput as InputOTPPrimitive } from "bits-ui";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), cell, class: className, ...restProps } = $props();
 </script>

@@ -2,7 +2,7 @@
 	import { Menubar as MenubarPrimitive } from "bits-ui";
 	import Check from "lucide-svelte/icons/check";
 	import Minus from "lucide-svelte/icons/minus";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	let {
 		ref = $bindable(null),
 		class: className,

@@ -1,7 +1,7 @@
 <script>
 	import GripVertical from "lucide-svelte/icons/grip-vertical";
 	import * as ResizablePrimitive from "paneforge";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, withHandle = false, ...restProps } = $props();
 </script>

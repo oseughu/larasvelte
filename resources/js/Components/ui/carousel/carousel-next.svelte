@@ -1,7 +1,7 @@
 <script>
 	import ArrowRight from "lucide-svelte/icons/arrow-right";
 	import { getEmblaContext } from "./context.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	import { Button } from "$/Components/ui/button/index.js";
 
 	let {

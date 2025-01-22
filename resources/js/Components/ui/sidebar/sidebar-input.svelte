@@ -1,6 +1,6 @@
 <script>
 	import { Input } from "$/Components/ui/input/index.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), value = $bindable(""), class: className, ...restProps } = $props();
 </script>

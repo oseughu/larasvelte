@@ -1,5 +1,5 @@
 <script>
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	let { ref = $bindable(null), class: className, children, child, ...restProps } = $props();
 
 	const propObj = $derived({

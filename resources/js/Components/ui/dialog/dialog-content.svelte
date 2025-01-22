@@ -2,7 +2,7 @@
 	import { Dialog as DialogPrimitive } from "bits-ui";
 	import X from "lucide-svelte/icons/x";
 	import * as Dialog from "./index.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, portalProps, children, ...restProps } = $props();
 </script>

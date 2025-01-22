@@ -1,7 +1,7 @@
 <script>
 	import { RangeCalendar as RangeCalendarPrimitive } from "bits-ui";
 	import * as RangeCalendar from "./index.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let {
 		ref = $bindable(null),

@@ -1,7 +1,7 @@
 <script>
 	import { Drawer as DrawerPrimitive } from "vaul-svelte";
 	import DrawerOverlay from "./drawer-overlay.svelte";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, portalProps, children, ...restProps } = $props();
 </script>

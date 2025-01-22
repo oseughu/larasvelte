@@ -24,7 +24,7 @@
 
 <script>
 	import * as Tooltip from "$/Components/ui/tooltip/index.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	import { mergeProps } from "bits-ui";
 	import { useSidebar } from "./context.svelte.js";
 

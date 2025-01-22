@@ -1,6 +1,6 @@
 <script>
 	import { Button } from "$/Components/ui/button/index.js";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	import PanelLeft from "lucide-svelte/icons/panel-left";
 	import { useSidebar } from "./context.svelte.js";
 

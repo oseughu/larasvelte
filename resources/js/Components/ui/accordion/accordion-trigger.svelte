@@ -1,7 +1,7 @@
 <script>
 	import { Accordion as AccordionPrimitive } from "bits-ui";
 	import ChevronDown from "lucide-svelte/icons/chevron-down";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, level = 3, children, ...restProps } = $props();
 </script>

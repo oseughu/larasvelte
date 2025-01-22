@@ -8,7 +8,7 @@
 	},
 	"aliases": {
 		"components": "$/Components",
-		"utils": "$/Lib/utils",
+		"utils": "$/Lib/Utils",
 		"ui": "$/Components/ui",
 		"hooks": "$/Lib/Hooks"
 	},

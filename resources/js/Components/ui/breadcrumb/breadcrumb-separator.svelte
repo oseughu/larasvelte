@@ -1,6 +1,6 @@
 <script>
 	import ChevronRight from "lucide-svelte/icons/chevron-right";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, children, ...restProps } = $props();
 </script>

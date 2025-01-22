@@ -22,7 +22,7 @@
 	import { Dialog as SheetPrimitive } from "bits-ui";
 	import X from "lucide-svelte/icons/x";
 	import SheetOverlay from "./sheet-overlay.svelte";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let {
 		ref = $bindable(null),

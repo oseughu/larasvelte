@@ -1,7 +1,7 @@
 <script>
 	import { Menubar as MenubarPrimitive } from "bits-ui";
 	import Circle from "lucide-svelte/icons/circle";
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 
 	let { ref = $bindable(null), class: className, children: childrenProp, ...restProps } = $props();
 </script>

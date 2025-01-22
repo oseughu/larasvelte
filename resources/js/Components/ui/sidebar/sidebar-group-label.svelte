@@ -1,5 +1,5 @@
 <script>
-	import { cn } from "$/Lib/utils.js";
+	import { cn } from "$/Lib/Utils.js";
 	let { ref = $bindable(null), children, child, class: className, ...restProps } = $props();
 
 	const mergedProps = $derived({
