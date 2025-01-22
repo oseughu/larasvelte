@@ -10,7 +10,7 @@
     "require": {
         "php": "^8.2",
         "inertiajs/inertia-laravel": "^2.0",
-        "laravel/framework": "^11.38.2",
+        "laravel/framework": "^11.39.0",
         "laravel/sanctum": "^4.0.7",
         "laravel/telescope": "^5.3",
         "laravel/tinker": "^2.10",
@@ -39,31 +39,28 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php -r \"file_exists('database/larasvelte.sqlite') || touch('database/larasvelte.sqlite');\"",
             "@php artisan package:discover --ansi"
         ],
         "post-install-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "bun i && bun run build",
+            "@php artisan key:generate --ansi",
             "@php artisan migrate --force --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "ncu -u",
-            "bun i && bun run build",
+            "bun i && bun run build:dev",
             "@php artisan migrate --graceful --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi",
-            "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
-            "@php artisan migrate --graceful --ansi"
-        ],
         "dev": [
+            "bun i && bun run build:dev",
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -k -c \"#aaff00,#93c5fd,#c4b5fd,#b2b2b2,#fb7185\" \"maildev\" \"php artisan serve\" \"php artisan queue:listen --queue=default\" \"php artisan inertia:start-ssr\" \"bun run dev\" --names=mailer,server,queue,inertia-ssr,vite"
+            "npx concurrently -k -c \"#aaff00,#93c5fd,#c4b5fd,#fb7185\" \"maildev\" \"php artisan serve\" \"php artisan queue:listen --queue=default\" \"bun run dev\" --names=mailer,server,queue,vite"
         ]
     },
     "extra": {
