@@ -31,7 +31,7 @@
 
   <div class="py-12">
     <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
-      <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
+      <div class="overflow-hidden bg-white shadow-xs sm:rounded-lg">
         <div class="p-6 bg-white dark:text-gray-300 dark:bg-gray-800">
           {#if !links.length}
             No links added. Why don't you add one below?
@@ -40,7 +40,7 @@
               <li>
                 <a href={link.url} target="_blank">{link.title}</a>
                 <button
-                  class="inline-flex items-center px-3 py-2 mt-4 ml-3 text-sm font-medium leading-4 text-white dark:text-gray-100 bg-red-400 border border-transparent rounded-md shadow-sm hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-700"
+                  class="inline-flex items-center px-3 py-2 mt-4 ml-3 text-sm font-medium leading-4 text-white dark:text-gray-100 bg-red-400 border border-transparent rounded-md shadow-xs hover:bg-red-800 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-red-700"
                   use:inertia={{
                     href: `/links/${link.id}`,
                     method: 'delete'
@@ -66,7 +66,7 @@
 
               <div class="mt-4">
                 <InputLabel for="url" value="URL" />
-                <div class="flex w-full lg:w-1/2 mt-1 rounded-md shadow-sm">
+                <div class="flex w-full lg:w-1/2 mt-1 rounded-md shadow-xs">
                   <span
                     class="inline-flex items-center px-3 dark:text-gray-300 dark:bg-gray-900 rounded-l-md sm:text-sm"
                   >
@@ -86,7 +86,7 @@
               <button
                 disabled={$form.processing}
                 type="submit"
-                class="inline-flex items-center px-3 py-2 mt-4 text-sm font-medium leading-4 text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                class="inline-flex items-center px-3 py-2 mt-4 text-sm font-medium leading-4 text-white bg-indigo-600 border border-transparent rounded-md shadow-xs hover:bg-indigo-700 focus:outline-hidden focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                 >Submit
               </button>
             </div>
