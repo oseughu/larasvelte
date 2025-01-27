@@ -12,13 +12,13 @@ Route::inertia('/', 'Admin/Home', [
     'phpVersion' => PHP_VERSION,
 ])->name('admin.home');
 
+Route::inertia('/dashboard', 'Admin/Dashboard')
+    ->middleware(['auth', 'verified'])
+    ->name('admin.dashboard');
+
 Route::middleware('guest')->group(function () {
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
         ->name('login');
 
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 });
-
-Route::get('/dashboard', function () {
-    return Inertia::render('Admin/Dashboard');
-})->middleware(['auth', 'verified'])->name('admin.dashboard');
