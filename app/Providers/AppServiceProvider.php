@@ -31,6 +31,12 @@ class AppServiceProvider extends ServiceProvider
             return;
         }
 
+        $databasePath = database_path(config('database.connections.sqlite.database'));
+
+        if (!file_exists($databasePath) || filesize($databasePath) === 0) {
+            return;
+        }
+
         $db->unprepared('PRAGMA synchronous = NORMAL;');
         $db->unprepared('PRAGMA foreign_keys = ON;');
         $db->unprepared('PRAGMA temp_store = MEMORY;');
