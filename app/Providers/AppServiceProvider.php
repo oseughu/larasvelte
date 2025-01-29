@@ -31,9 +31,9 @@ class AppServiceProvider extends ServiceProvider
             return;
         }
 
-        $databasePath = database_path(config('database.connections.sqlite.database'));
+        $db_path = database_path(config('database.connections.sqlite.database'));
 
-        if (!file_exists($databasePath) || filesize($databasePath) === 0) {
+        if (!file_exists($db_path) || filesize($db_path) === 0) {
             return;
         }
 
