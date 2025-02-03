@@ -5,6 +5,7 @@
 /public/service-worker.js
 /public/hot
 /public/storage
+/public/vendor
 /storage/*.key
 /storage/pail
 /vendor
