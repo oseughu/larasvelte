@@ -2,8 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build:dev": "vite build && bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build",
-        "build:prod": "vite build && vite build --ssr && bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build && vite build --ssr",
+        "build:dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build",
+        "build:prod": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build && vite build --ssr",
         "dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite",
         "shadcn:update": "bunx shadcn-svelte@next update --all"
     },
@@ -35,5 +35,8 @@
         "vaul-svelte": "^1.0.0-next.3",
         "vite": "^6.0.11",
         "zod": "^3.24.1"
+    },
+    "engines": {
+        "node": "23.7.0"
     }
 }

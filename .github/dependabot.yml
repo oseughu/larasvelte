@@ -4,15 +4,17 @@ updates:
   - package-ecosystem: 'composer'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
     labels:
       - 'dependencies'
+    open-pull-requests-limit: 10
 
   # npm dependencies
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
-      interval: 'weekly'
+      interval: 'daily'
     labels:
       - 'dependencies'
       - 'devDependencies'
+    open-pull-requests-limit: 10

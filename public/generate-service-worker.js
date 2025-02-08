@@ -9,6 +9,11 @@ const __dirname = path.dirname(__filename)
 // Path to the Vite manifest file
 const manifestPath = path.join(__dirname, './build/manifest.json')
 
+if (!fs.existsSync(manifestPath)) {
+  console.error('Manifest file does not exist. Exiting.')
+  process.exit(0)
+}
+
 // Read and parse the manifest
 const manifestData = await fs.promises.readFile(manifestPath, 'utf8')
 const manifest = JSON.parse(manifestData)
