@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\File;
 
 class AppSetup extends Command
 {
@@ -33,6 +33,7 @@ class AppSetup extends Command
                 $this->info('Created .env file from .env.example.');
             } else {
                 $this->error('.env.example file is missing. Cannot create .env.');
+
                 return;
             }
         } else {

@@ -17,6 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     Log::error('Look ma I logged an error!');
+
     return response()->json(['message' => 'Hello API!']);
 });
 
