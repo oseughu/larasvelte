@@ -7,7 +7,7 @@ updates:
       interval: 'daily'
     labels:
       - 'dependencies'
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
 
   # npm dependencies
   - package-ecosystem: 'npm'
@@ -17,4 +17,4 @@ updates:
     labels:
       - 'dependencies'
       - 'devDependencies'
-    open-pull-requests-limit: 10
+    open-pull-requests-limit: 5
