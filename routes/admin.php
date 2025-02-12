@@ -3,11 +3,10 @@
 use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
 
 Route::inertia('/', 'Admin/Home', [
-    'canLogin' => Route::has('login'),
-    'canRegister' => Route::has('register'),
+    'canLogin' => true,
+    'canRegister' => false,
     'laravelVersion' => Application::VERSION,
     'phpVersion' => PHP_VERSION,
 ])->name('admin.home');

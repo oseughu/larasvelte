@@ -33,17 +33,19 @@ class RouteServiceProvider extends ServiceProvider
                 ->group(base_path('routes/web.php'));
         });
 
-        // subdomain routing
+        // api subdomain routing
+        $api_url = env('APP_ENV') !== 'production' ? 'dev-api' : 'api';
+        Route::domain($api_url . '.' . env('APP_URL'))
+            ->middleware('api')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/api.php'));
+
+        // admin subdomain routing
         // $admin_url = env('APP_ENV') !== 'production' ? 'dev-admin' : 'admin';
-        // $api_url = env('APP_ENV') !== 'production' ? 'dev-api' : 'api';
         // Route::domain($admin_url . '.' . env('APP_URL'))
         //     ->middleware('web')
         //     ->namespace($this->namespace)
         //     ->group(base_path('routes/admin.php'));
-        // Route::domain($api_url . '.' . env('APP_URL'))
-        //     ->middleware('api')
-        //     ->namespace($this->namespace)
-        //     ->group(base_path('routes/api.php'));
     }
 
     /**

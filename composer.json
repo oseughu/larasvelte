@@ -22,8 +22,7 @@
         "laravel/sail": "^1.40",
         "mockery/mockery": "^1.6.12",
         "nunomaduro/collision": "^8.5",
-        "pestphp/pest": "^3.7.2",
-        "soloterm/solo": "^0.3.1"
+        "pestphp/pest": "^3.7.2"
     },
     "autoload": {
         "psr-4": {
@@ -40,20 +39,18 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php -r \"file_exists('database/larasvelte.sqlite') || touch('database/larasvelte.sqlite');\"",
             "@php artisan package:discover --ansi"
         ],
         "post-install-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php -r \"\\$env = file_exists('.env') ? file_get_contents('.env') : ''; if (!preg_match('/^APP_KEY=(?!\\s*\\$).+$/m', \\$env)) { system('php artisan key:generate') || exit(0); }\"",
-            "@php artisan migrate --force --ansi"
+            "@php artisan app:setup --ansi",
+            "@php artisan migrate:all --ansi"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
             "ncu -u",
             "bun i && bun run build:dev",
-            "@php artisan migrate --graceful --ansi"
+            "@php artisan migrate:all --ansi"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
@@ -61,7 +58,7 @@
         "dev": [
             "bun i && bun run build:dev",
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -k -c \"#aaff00,#93c5fd,#c4b5fd,#fb7185\" \"maildev\" \"php artisan serve\" \"php artisan queue:listen --queue=default\" \"bun run dev\" --names=mailer,server,queue,vite"
+            "npx concurrently -k -c \"#22c55e,#3b82f6,#a855f7,#f43f5e\" \"maildev\" \"php artisan serve\" \"php artisan queue:listen --queue=default\" \"bun run dev\" --names=mailer,server,queue,vite"
         ]
     },
     "extra": {

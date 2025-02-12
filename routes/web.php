@@ -17,8 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::inertia('/', 'Home', [
-    'canLogin' => Route::has('login'),
-    'canRegister' => Route::has('register'),
+    'canLogin' => true,
+    'canRegister' => true,
     'laravelVersion' => Application::VERSION,
     'phpVersion' => PHP_VERSION,
 ])->name('home');
