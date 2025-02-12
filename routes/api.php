@@ -22,8 +22,5 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    if (!$request->user()) {
-        return response()->json(['error' => 'User not authenticated.'], 401);
-    }
     return $request->user();
 });
