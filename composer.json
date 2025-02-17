@@ -59,6 +59,9 @@
             "bun i && bun run build:dev",
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -k -c \"#22c55e,#3b82f6,#a855f7,#f43f5e\" \"maildev\" \"php artisan serve\" \"php artisan queue:listen --queue=default\" \"bun run dev\" --names=mailer,server,queue,vite"
+        ],
+        "pint": [
+            "./vendor/bin/pint"
         ]
     },
     "extra": {
