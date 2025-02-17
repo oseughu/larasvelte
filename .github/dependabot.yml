@@ -1,6 +1,5 @@
 version: 2
 updates:
-  # Composer dependencies
   - package-ecosystem: 'composer'
     directory: '/'
     schedule:
@@ -9,8 +8,7 @@ updates:
       - 'dependencies'
     open-pull-requests-limit: 5
 
-  # npm dependencies
-  - package-ecosystem: 'npm'
+  - package-ecosystem: 'bun'
     directory: '/'
     schedule:
       interval: 'daily'
