@@ -2,9 +2,10 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build:dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build",
-        "build:prod": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite build && vite build --ssr",
-        "dev": "bun public/generate-manifest.js && bun public/generate-service-worker.js && vite",
+        "generate": "bun public/generate-manifest.js && bun public/generate-service-worker.js",
+        "build": "bun run generate && vite build",
+        "build:ssr": "bun run build && vite build --ssr",
+        "dev": "bun run generate && vite",
         "shadcn:update": "bunx shadcn-svelte@next update --all"
     },
     "devDependencies": {
