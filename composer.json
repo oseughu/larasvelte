@@ -1,5 +1,6 @@
 {
-    "name": "laravel/laravel",
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "oseughu/larasvelte-starter-kit",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -10,7 +11,7 @@
     "require": {
         "php": "^8.2",
         "inertiajs/inertia-laravel": "^2.0.1",
-        "laravel/framework": "^11.44.0",
+        "laravel/framework": "^12.0.1",
         "laravel/sanctum": "^4.0.8",
         "laravel/telescope": "^5.5",
         "laravel/tinker": "^2.10.1",
