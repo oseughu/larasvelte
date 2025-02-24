@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "oseughu/larasvelte-starter-kit",
+    "name": "oseughu/larasvelte",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
