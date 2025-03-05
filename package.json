@@ -24,7 +24,7 @@
         "maildev": "^2.2.1",
         "mode-watcher": "^0.5.1",
         "paneforge": "^1.0.0-next.2",
-        "svelte": "5.20.4",
+        "svelte": "5.22.2",
         "svelte-portal": "^2.2.1",
         "svelte-sonner": "^0.3.28",
         "svelte-transition": "^0.0.17",
