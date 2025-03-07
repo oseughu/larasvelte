@@ -70,7 +70,6 @@ return [
             'block_for' => null,
             'after_commit' => false,
         ],
-
     ],
 
     /*
@@ -85,7 +84,7 @@ return [
     */
 
     'batching' => [
-        'database' => env('DB_CONNECTION', 'sqlite'),
+        'database' => 'sqlite_queue',
         'table' => 'job_batches',
     ],
 
@@ -104,8 +103,7 @@ return [
 
     'failed' => [
         'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
-        'database' => env('DB_CONNECTION', 'sqlite'),
+        'database' => 'sqlite_queue',
         'table' => 'failed_jobs',
     ],
-
 ];
